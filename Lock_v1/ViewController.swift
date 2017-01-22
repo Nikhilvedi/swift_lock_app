@@ -12,8 +12,6 @@ import UIKit
 import SwiftyJSON
 
 class ViewController: UIViewController {
-   
-    
     
     func presentAlert() {
         let alertController = UIAlertController(title: "IP?", message: "Please input your unique key:", preferredStyle: .alert)
@@ -44,6 +42,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn");
+        
+        if(!isUserLoggedIn)
+        {
+            self.performSegue(withIdentifier: "LoginView", sender: self)
+        }
+        
+        
     }
    
     var Timestamp: String {
@@ -117,78 +127,22 @@ class ViewController: UIViewController {
         
     }
     
-    func login()
-    {
-        let u = UserDefaults.standard.value(forKey: "userIP")!
-        var request = URLRequest(url: URL(string: "http://\(u):3000/users/authenticate")!)
-        request.httpMethod = "POST"
-        let postString = "name=\(email.text!)&password=\(password.text!)"
-        request.httpBody = postString.data(using: .utf8)
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error)")
-                return
-            }
-            
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
-            }
-            
-           let responseString = String(data: data, encoding: .utf8)
-          // print("responseString = \(responseString)")
-            
-            if let data = responseString?.data(using: String.Encoding.utf8) {
-                let resString = JSON(data: data)
-                
-                if resString["success"].stringValue == "true"
-                {
-    
-                    //save token to userstandards 
-                
-                    UserDefaults.standard.set((resString["token"].stringValue), forKey: "token")
-                    UserDefaults.standard.synchronize()
-                    
-                    //move to next window here
-                    
-                }
-                else if resString["success"].stringValue == "false"
-                {
-                    //pop up a box saying incorrect user please try again 
-                    
-                    
-                    
-                }
-                
-                    print(resString["success"].stringValue)
-                    print(resString["token"].stringValue)
-                
-            }
-        
-        }
-        task.resume()
-        
-//test save to user standards
-        print(UserDefaults.standard.value(forKey: "token") ?? "nill")
-
-    }
-
+   
     @IBAction func ip(_ sender: UIButton) {
      presentAlert()
     }
    
-    //text fields
-    @IBOutlet weak var password: UITextField!
-    
-    @IBOutlet weak var email: UITextField!
-    
+
+    @IBAction func logoutbutton(_ sender: Any) {
+        UserDefaults.standard.set(false,forKey:"isUserLoggedIn");
+        UserDefaults.standard.synchronize();
+        
+        self.performSegue(withIdentifier: "LoginView", sender: self);
+
+    }
     
     //button actions 
-    
-    @IBAction func Submit(_ sender: UIButton) {
-       
-        login()
-    }
+
 
     @IBAction func lock(_ sender: UIButton) {
         lock()
