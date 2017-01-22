@@ -1,0 +1,6 @@
+framework module Pods_Lock_v1Tests {
+  umbrella header "Pods-Lock_v1Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -9,6 +9,7 @@
 //to post to an /unLock it must be put in the URL
 
 import UIKit
+import SwiftyJSON
 
 class ViewController: UIViewController {
    
@@ -119,7 +120,6 @@ class ViewController: UIViewController {
     func login()
     {
         let u = UserDefaults.standard.value(forKey: "userIP")!
-     //   let url_to_login = "http://\(u):3000/users/authenticate"
         var request = URLRequest(url: URL(string: "http://\(u):3000/users/authenticate")!)
         request.httpMethod = "POST"
         let postString = "name=\(email.text!)&password=\(password.text!)"
@@ -135,14 +135,40 @@ class ViewController: UIViewController {
                 print("response = \(response)")
             }
             
-            let responseString = String(data: data, encoding: .utf8)
-           //print("responseString = \(responseString)")
-            UserDefaults.standard.set((responseString), forKey: "token")
-            UserDefaults.standard.synchronize()
+           let responseString = String(data: data, encoding: .utf8)
+          // print("responseString = \(responseString)")
+            
+            if let data = responseString?.data(using: String.Encoding.utf8) {
+                let resString = JSON(data: data)
+                
+                if resString["success"].stringValue == "true"
+                {
+    
+                    //save token to userstandards 
+                
+                    UserDefaults.standard.set((resString["token"].stringValue), forKey: "token")
+                    UserDefaults.standard.synchronize()
+                    
+                    //move to next window here
+                    
+                }
+                else if resString["success"].stringValue == "false"
+                {
+                    //pop up a box saying incorrect user please try again 
+                    
+                    
+                    
+                }
+                
+                    print(resString["success"].stringValue)
+                    print(resString["token"].stringValue)
+                
+            }
+        
         }
         task.resume()
         
-
+//test save to user standards
         print(UserDefaults.standard.value(forKey: "token") ?? "nill")
 
     }
@@ -151,11 +177,11 @@ class ViewController: UIViewController {
      presentAlert()
     }
    
+    //text fields
     @IBOutlet weak var password: UITextField!
     
     @IBOutlet weak var email: UITextField!
     
-   
     
     //button actions 
     
