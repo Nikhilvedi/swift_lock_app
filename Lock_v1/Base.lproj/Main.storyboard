@@ -60,6 +60,7 @@
                     <navigationItem key="navigationItem" id="aql-Sr-njl"/>
                     <connections>
                         <segue destination="VRs-JW-cpU" kind="presentation" identifier="LoginView" id="zm8-Y6-g0J"/>
+                        <segue destination="eOm-EK-hGZ" kind="presentation" identifier="Setup" id="AHj-Vz-g4v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -147,6 +148,51 @@
             </objects>
             <point key="canvasLocation" x="1625.625" y="147.88732394366198"/>
         </scene>
+        <!--Setup View Controller-->
+        <scene sceneID="1b5-DS-kk3">
+            <objects>
+                <viewController id="eOm-EK-hGZ" customClass="SetupViewController" customModule="Lock_v1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zvK-NQ-paJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="gMl-hx-g3x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YOB-RR-LDf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter your LockID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dg-dl-0tB">
+                                <rect key="frame" x="31" y="147" width="273" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your LockID:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JmF-9k-Qg2">
+                                <rect key="frame" x="31" y="188" width="273" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JmO-GP-65o">
+                                <rect key="frame" x="31" y="239" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="setup:" destination="eOm-EK-hGZ" eventType="touchUpInside" id="u5o-OY-7MT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="LockID" destination="JmF-9k-Qg2" id="1Eo-Sz-YGh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gln-Ay-sQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1625.625" y="-594.71830985915494"/>
+        </scene>
         <!--Admin Tools View Controller-->
         <scene sceneID="aW6-do-YuZ">
             <objects>
@@ -181,7 +227,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ox-l4-wir" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="796" y="888"/>
+            <point key="canvasLocation" x="1628" y="942"/>
         </scene>
         <!--register-->
         <scene sceneID="5RJ-dM-52N">
@@ -259,14 +305,14 @@
                                     <action selector="HaveAccount:" destination="Lae-5r-T5p" eventType="touchUpInside" id="cjF-3n-E0J"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Unique Lock key:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NA7-Wb-Z6r">
-                                <rect key="frame" x="16" y="280" width="131" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Unique LockID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NA7-Wb-Z6r">
+                                <rect key="frame" x="16" y="280" width="117" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Unique Lock Key (IP):" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Njr-Bu-UZN">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="You can also enter this later" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Njr-Bu-UZN">
                                 <rect key="frame" x="16" y="309" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -277,6 +323,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="LockID" destination="Njr-Bu-UZN" id="N5h-sw-P8l"/>
                         <outlet property="email" destination="2CR-mU-i9U" id="qsO-wr-bRM"/>
                         <outlet property="password" destination="ZyR-6s-eYe" id="iZv-eI-ZGY"/>
                         <outlet property="password2" destination="hXH-4z-edN" id="hP3-as-52y"/>
@@ -284,7 +331,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NEV-2A-wdF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1627.5" y="891.54929577464793"/>
+            <point key="canvasLocation" x="2561" y="148"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nuv-ZN-esT">

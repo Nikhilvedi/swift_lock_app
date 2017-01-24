@@ -25,7 +25,8 @@ class RegisterPageViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var password2: UITextField!
-
+    @IBOutlet weak var LockID: UITextField!
+    
     @IBAction func registerButton(_ sender: Any) {
         
         let userEmail = email.text
@@ -55,17 +56,40 @@ class RegisterPageViewController: UIViewController {
         
         register()
 
-        
+        email.text = "";
+        password.text="";
+        password2.text="";
+        LockID.text="";
     }
     
     func register()
     {
+        //store everything in user defaults
+        
+        UserDefaults.standard.set(email.text!, forKey: "email")
+        UserDefaults.standard.set(password.text!, forKey: "password")
+        UserDefaults.standard.synchronize()
+        
+        if (LockID.text?.isEmpty)!
+        {
+            print("no lockID")
+              UserDefaults.standard.set(false, forKey: "LockIDPresent")
+              UserDefaults.standard.synchronize()
+            
+        }
+        else
+        {
+            print(LockID.text as Any)
+             UserDefaults.standard.set(LockID.text!, forKey: "LockID")
+                UserDefaults.standard.set(true, forKey: "LockIDPresent")
+               UserDefaults.standard.synchronize()
+        }
         
         
         let u = UserDefaults.standard.value(forKey: "userIP")!
         var request = URLRequest(url: URL(string: "http://\(u):3000/users")!)
         request.httpMethod = "POST"
-        let postString = "name=\(email.text!)&password=\(password.text!)"
+        let postString = "name=\(email.text!)&password=\(password.text!)&LockID=\(LockID.text!)"
         print(postString)
         request.httpBody = postString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -105,6 +129,7 @@ class RegisterPageViewController: UIViewController {
         }
         task.resume()
     }
+    
     
     func displayMyAlertMessage(_ userMessage:String)
     {

@@ -16,22 +16,30 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UserDefaults.standard.set(false, forKey: "LockIDPresent")
+        UserDefaults.standard.synchronize()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
         let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn");
+        let doesUserHaveLock = UserDefaults.standard.bool(forKey: "LockIDPresent");
         
-        if(!isUserLoggedIn)
-        {
+       
+         if(!isUserLoggedIn) {
             self.performSegue(withIdentifier: "LoginView", sender: self)
+            print(doesUserHaveLock)
         }
-        
-        
-    }
+         else  if (isUserLoggedIn) && (!doesUserHaveLock)
+         {
+            self.performSegue(withIdentifier: "Setup", sender: self)
+        }
+           print(doesUserHaveLock)
+      }
    
     var Timestamp: String {
         return "\(NSDate().timeIntervalSince1970 * 1000)"
+        
     }
     func un_lock()
     {
@@ -48,6 +56,8 @@ class ViewController: UIViewController {
         //make this work
         let paramString = "data=unLocking at \(Timestamp)"
         request.httpBody = paramString.data(using: String.Encoding.utf8)
+        
+        
         
         let task = session.dataTask(with: request as URLRequest, completionHandler: {
             (
