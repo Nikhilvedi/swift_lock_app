@@ -107,10 +107,14 @@ class ViewController: UIViewController {
         UserDefaults.standard.synchronize();
         
         self.performSegue(withIdentifier: "LoginView", sender: self);
+        
+        if Bundle.main.bundleIdentifier != nil {
+            UserDefaults.standard.removePersistentDomain(forName: "token")
+        }
 
     }
     
-    //button actions 
+    //button actions
 
 
     @IBAction func lock(_ sender: UIButton) {
@@ -121,5 +125,7 @@ class ViewController: UIViewController {
         un_lock()
 
     }
+    
+    
       }
 

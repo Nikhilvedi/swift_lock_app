@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class RegisterPageViewController: UIViewController {
 
@@ -27,10 +28,100 @@ class RegisterPageViewController: UIViewController {
 
     @IBAction func registerButton(_ sender: Any) {
         
-//        let userEmail = email.text
-//        let userPassword = password.text
-//        let userPasswordConfirm = password2.text
+        let userEmail = email.text
+        let userPassword = password.text
+        let userPasswordConfirm = password2.text
         
+        //validation before sending to server 
+        
+        if((userEmail?.isEmpty)! || (userPassword?.isEmpty)! || (userPasswordConfirm?.isEmpty)!)
+        {
+            
+            // Display alert message
+            
+            displayMyAlertMessage("All fields are required");
+            
+            return;
+        }
+        
+        //Check if passwords match
+        if(userPassword != userPasswordConfirm)
+        {
+            // Display an alert message
+            displayMyAlertMessage("Passwords do not match");
+            return;
+            
+        }
+        
+        register()
+
+        
+    }
+    
+    func register()
+    {
+        
+        
+        let u = UserDefaults.standard.value(forKey: "userIP")!
+        var request = URLRequest(url: URL(string: "http://\(u):3000/users")!)
+        request.httpMethod = "POST"
+        let postString = "name=\(email.text!)&password=\(password.text!)"
+        print(postString)
+        request.httpBody = postString.data(using: .utf8)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(error)")
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(response)")
+            }
+            
+            let responseString = String(data: data, encoding: .utf8)
+             print("responseString = \(responseString)")
+            
+            if let data = responseString?.data(using: String.Encoding.utf8) {
+                let resString = JSON(data: data)
+                
+                if resString["success"].stringValue == "true"
+                {
+                    DispatchQueue.main.async() {
+                    self.displayMyAlertMessage(resString["message"].stringValue)
+                    }
+                }
+                else if resString["success"].stringValue == "false"
+                {
+                    //error handling for already signed up users
+
+                    print(resString["message"].stringValue);
+                    DispatchQueue.main.async() {
+                        self.displayMyAlertMessage(resString["message"].stringValue)
+                    }
+                }
+            }
+            
+        }
+        task.resume()
+    }
+    
+    func displayMyAlertMessage(_ userMessage:String)
+    {
+        
+        let myAlert = UIAlertController(title:"Alert", message:userMessage, preferredStyle: UIAlertControllerStyle.alert);
+        
+        let okAction = UIAlertAction(title:"Ok", style:UIAlertActionStyle.default, handler:nil);
+        
+        myAlert.addAction(okAction);
+        
+        self.present(myAlert, animated:true, completion:nil);
+        
+    }
+    
+    @IBAction func HaveAccount(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+
     }
     /*
     // MARK: - Navigation

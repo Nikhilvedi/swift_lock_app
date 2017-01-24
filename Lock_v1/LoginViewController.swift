@@ -67,10 +67,12 @@ class LoginViewController: UIViewController {
                 {
                     //pop up a box saying incorrect user please try again
                      print(resString["message"].stringValue);
-                    
-
+                    UserDefaults.standard.set(resString["message"].stringValue,forKey:"loginFailed");
+                    DispatchQueue.main.async() {
+                        self.displayMyAlertMessage("Your credentials are incorrect. Please check your email and password.")
+                    }
                 }
-                
+
                 //   print(resString["success"].stringValue)
                 //   print(resString["token"].stringValue)
                 
@@ -78,8 +80,6 @@ class LoginViewController: UIViewController {
             
         }
         task.resume()
-        
-        
     }
 
     @IBOutlet weak var password: UITextField!
@@ -90,4 +90,18 @@ class LoginViewController: UIViewController {
         login()
         
     }
+    
+    func displayMyAlertMessage(_ userMessage:String)
+    {
+        
+        let myAlert = UIAlertController(title:"Alert", message:userMessage, preferredStyle: UIAlertControllerStyle.alert);
+        
+        let okAction = UIAlertAction(title:"Ok", style:UIAlertActionStyle.default, handler:nil);
+        
+        myAlert.addAction(okAction);
+        
+        self.present(myAlert, animated:true, completion:nil);
+        
+    }
+
 }

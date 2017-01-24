@@ -53,6 +53,11 @@ class AdminToolsViewController: UIViewController {
     @IBAction func InputIP(_ sender: Any) {
         presentAlert()
     }
+    
+    
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
