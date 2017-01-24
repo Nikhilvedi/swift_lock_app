@@ -16,6 +16,7 @@
 		561C18E21E01ED76006172E5 /* Lock_v1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C18E11E01ED76006172E5 /* Lock_v1Tests.swift */; };
 		561C18ED1E01ED76006172E5 /* Lock_v1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C18EC1E01ED76006172E5 /* Lock_v1UITests.swift */; };
 		561C18FB1E031224006172E5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 561C18FA1E031224006172E5 /* Default-568h@2x.png */; };
+		5671E1961E3792900031AD69 /* AdminToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5671E1951E3792900031AD69 /* AdminToolsViewController.swift */; };
 		56AB66AE1E351A3700ADF4C1 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AB66AD1E351A3700ADF4C1 /* RegisterPageViewController.swift */; };
 		56AB66B01E351D9900ADF4C1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AB66AF1E351D9900ADF4C1 /* LoginViewController.swift */; };
 		B02E82310BF50D969D1E5667 /* Pods_Lock_v1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D36824FFA0D4952BFF375CD /* Pods_Lock_v1Tests.framework */; };
@@ -58,6 +59,7 @@
 		561C18EC1E01ED76006172E5 /* Lock_v1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lock_v1UITests.swift; sourceTree = "<group>"; };
 		561C18EE1E01ED76006172E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		561C18FA1E031224006172E5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		5671E1951E3792900031AD69 /* AdminToolsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminToolsViewController.swift; sourceTree = "<group>"; };
 		56AB66AD1E351A3700ADF4C1 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 		56AB66AF1E351D9900ADF4C1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		69FADA9D271ABABC629E4E9E /* Pods-Lock_v1Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lock_v1Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lock_v1Tests/Pods-Lock_v1Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			children = (
 				561C18CC1E01ED76006172E5 /* AppDelegate.swift */,
 				561C18CE1E01ED76006172E5 /* ViewController.swift */,
+				5671E1951E3792900031AD69 /* AdminToolsViewController.swift */,
 				561C18D01E01ED76006172E5 /* Main.storyboard */,
 				561C18D31E01ED76006172E5 /* Assets.xcassets */,
 				561C18D51E01ED76006172E5 /* LaunchScreen.storyboard */,
@@ -460,6 +463,7 @@
 				56AB66B01E351D9900ADF4C1 /* LoginViewController.swift in Sources */,
 				561C18CF1E01ED76006172E5 /* ViewController.swift in Sources */,
 				561C18CD1E01ED76006172E5 /* AppDelegate.swift in Sources */,
+				5671E1961E3792900031AD69 /* AdminToolsViewController.swift in Sources */,
 				56AB66AE1E351A3700ADF4C1 /* RegisterPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

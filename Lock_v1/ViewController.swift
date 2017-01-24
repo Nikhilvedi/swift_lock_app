@@ -13,32 +13,6 @@ import SwiftyJSON
 
 class ViewController: UIViewController {
     
-    func presentAlert() {
-        let alertController = UIAlertController(title: "IP?", message: "Please input your unique key:", preferredStyle: .alert)
-        
-        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
-            if let field = alertController.textFields?[0] {
-                //this could be lock unique key name etc in future
-                UserDefaults.standard.set(field.text, forKey: "userIP")
-                UserDefaults.standard.synchronize()
-            } else {
-                // user did not fill field - doesnt currently work
-                print("no input given")
-            }
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
-        
-    
-        alertController.addTextField { (textField) in
-            textField.placeholder = "IP"
-        }
-        
-        alertController.addAction(confirmAction)
-        alertController.addAction(cancelAction)
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,11 +99,6 @@ class ViewController: UIViewController {
         
         task.resume()
         
-    }
-    
-   
-    @IBAction func ip(_ sender: UIButton) {
-     presentAlert()
     }
    
 

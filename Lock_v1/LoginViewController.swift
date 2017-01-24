@@ -68,21 +68,7 @@ class LoginViewController: UIViewController {
                     //pop up a box saying incorrect user please try again
                      print(resString["message"].stringValue);
                     
-//                    let alertController = UIAlertController(title: "Error", message: "Incorrect Details", preferredStyle: .alert)
-//                  
-//                    
-//                    alertController.addTextField { (textField) in
-//                        textField.placeholder = "IP"
-//                    }
-//                     let okAction = UIAlertAction(title:"Ok", style:UIAlertActionStyle.default, handler:nil);
-//                    
-//                    alertController.addAction(okAction)
-//                    
-//                    self.present(alertController, animated: true, completion: nil)
-                    
-                    
 
-                    
                 }
                 
                 //   print(resString["success"].stringValue)
