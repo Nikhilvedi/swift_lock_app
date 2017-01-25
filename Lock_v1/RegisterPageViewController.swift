@@ -13,6 +13,8 @@ class RegisterPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //hide keyboard when anywhere tapped
+         self.hideKeyboardWhenTappedAround()
 
         // Do any additional setup after loading the view.
     }

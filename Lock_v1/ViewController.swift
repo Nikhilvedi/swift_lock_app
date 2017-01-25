@@ -11,6 +11,17 @@
 import UIKit
 import SwiftyJSON
 
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
 class ViewController: UIViewController {
     
     
@@ -20,6 +31,8 @@ class ViewController: UIViewController {
      //   UserDefaults.standard.set(false, forKey: "LockIDPresent")
      //   UserDefaults.standard.synchronize()
     }
+    
+    
     
     override func viewDidAppear(_ animated: Bool) {
         

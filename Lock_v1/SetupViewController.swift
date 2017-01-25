@@ -13,7 +13,9 @@ class SetupViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       let n =  UserDefaults.standard.value(forKey: "email")!
+        //hide keyboard when anywhere tapped
+         self.hideKeyboardWhenTappedAround()
+        let n =  UserDefaults.standard.value(forKey: "email")!
         //improve this 
         hello_label.text = "Hello \(n) you have no locks set up"
         // Do any additional setup after loading the view.
