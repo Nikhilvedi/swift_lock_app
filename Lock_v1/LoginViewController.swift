@@ -24,6 +24,19 @@ class LoginViewController: UIViewController {
     
     func login()
     {
+        UserDefaults.standard.set(email.text!, forKey: "email")
+        UserDefaults.standard.set(password.text!, forKey: "password")
+        UserDefaults.standard.synchronize()
+        
+        if (UserDefaults.standard.value(forKey: "userIP") == nil)
+        {
+            //make this a message box and stop the program crashing by assigning user defaults a value
+            UserDefaults.standard.set("localhost", forKey: "userIP")
+
+            print("Local host programatically set");
+            displayMyAlertMessage("There is no IP set up, please see admin tools")
+        }
+
         let u = UserDefaults.standard.value(forKey: "userIP")!
         var request = URLRequest(url: URL(string: "http://\(u):3000/users/authenticate")!)
         request.httpMethod = "POST"
@@ -41,7 +54,7 @@ class LoginViewController: UIViewController {
             }
             
             let responseString = String(data: data, encoding: .utf8)
-            // print("responseString = \(responseString)")
+             print("responseString = \(responseString)")
             
             if let data = responseString?.data(using: String.Encoding.utf8) {
                 let resString = JSON(data: data)
@@ -50,12 +63,27 @@ class LoginViewController: UIViewController {
                 {
                     
                     //save token to user standards
-                    
                     UserDefaults.standard.set((resString["token"].stringValue), forKey: "token")
                     UserDefaults.standard.synchronize()
                     
-                    //test save to user standards
-                    print(UserDefaults.standard.value(forKey: "token") ??  "no token stored")
+                    //save lockid to user standards, from the authenticate method 
+                    if resString["LockID"].stringValue == ""
+                    {
+                        //make set lockID pop up
+                           UserDefaults.standard.set(false, forKey: "LockIDPresent")
+                           UserDefaults.standard.synchronize()
+                    }
+                    else {
+                        //stop set lockID from popping up and store the LockID for future use
+                        let id = resString["LockID"].stringValue
+                        UserDefaults.standard.set(true, forKey: "LockIDPresent")
+                        UserDefaults.standard.set(id, forKey: "LockID")
+                        UserDefaults.standard.synchronize()
+                    }
+                    
+                    //test token save to user standards
+                 //   print(UserDefaults.standard.value(forKey: "token") ??  "no token stored")
+                    
                     //move to next window here
                     UserDefaults.standard.set(true,forKey:"isUserLoggedIn");
                     UserDefaults.standard.synchronize();
@@ -71,6 +99,8 @@ class LoginViewController: UIViewController {
                     DispatchQueue.main.async() {
                         self.displayMyAlertMessage("Your credentials are incorrect. Please check your email and password.")
                     }
+                    
+                    
                 }
 
                 //   print(resString["success"].stringValue)

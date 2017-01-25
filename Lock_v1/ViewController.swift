@@ -16,8 +16,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserDefaults.standard.set(false, forKey: "LockIDPresent")
-        UserDefaults.standard.synchronize()
+        //why am i doing this?
+     //   UserDefaults.standard.set(false, forKey: "LockIDPresent")
+     //   UserDefaults.standard.synchronize()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -28,8 +29,9 @@ class ViewController: UIViewController {
        
          if(!isUserLoggedIn) {
             self.performSegue(withIdentifier: "LoginView", sender: self)
-            print(doesUserHaveLock)
+           // print(doesUserHaveLock)
         }
+        //add here when PUT/POST user lock works
          else  if (isUserLoggedIn) && (!doesUserHaveLock)
          {
             self.performSegue(withIdentifier: "Setup", sender: self)
@@ -41,76 +43,139 @@ class ViewController: UIViewController {
         return "\(NSDate().timeIntervalSince1970 * 1000)"
         
     }
+    
     func un_lock()
     {
+          UIApplication.shared.isNetworkActivityIndicatorVisible = true;
+        //make post strings send back the users email, LockID?
+        
         let u = UserDefaults.standard.value(forKey: "userIP")!
         let url_to_unlock:String = "http://\(u):3000/unLock"
-        print(url_to_unlock)
-        let url:URL = URL(string: url_to_unlock)!
-        let session = URLSession.shared
-        
-        let request = NSMutableURLRequest(url: url)
+        let n = UserDefaults.standard.value(forKey: "email")!
+        let l = UserDefaults.standard.value(forKey: "LockID")!
+       
+        let postString = "name=\(n)&LockID=\(l)"
+            var request = URLRequest(url: URL(string: url_to_unlock)!)
+
+        //testing
+      //  print(postString)
+      //  print(url_to_unlock)
         request.httpMethod = "POST"
-        request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
+        request.httpBody = postString.data(using: .utf8)
         
-        //make this work
-        let paramString = "data=unLocking at \(Timestamp)"
-        request.httpBody = paramString.data(using: String.Encoding.utf8)
-        
-        
-        
-        let task = session.dataTask(with: request as URLRequest, completionHandler: {
-            (
-            data, response, error) in
-            
-            guard let _:Data = data, let _:URLResponse = response  , error == nil else {
-                print("Error comunicating with server, Check IP")
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {                                                                                          // check for fundamental networking error
+                print("error=\(error)")
                 return
             }
-            //for errors
-            let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-            print(dataString! )
             
-        })
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {                // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(response)")
+            }
+            
+            let responseString = String(data: data, encoding: .utf8)
+            print("responseString = \(responseString)")
+            
+            if let data = responseString?.data(using: String.Encoding.utf8) {
+                let resString = JSON(data: data)
+                
+                if resString["success"].stringValue == "true"
+                {
+                   //handle success
+                    //animate a lock shutting maybe?
+                    //print for now
+                    print(resString["message"].stringValue)
+                    DispatchQueue.main.async() {
+                        self.displayMyAlertMessage(resString["message"].stringValue)
+                    }
+                }
+                else if resString["success"].stringValue == "false"
+                {
+                    //error handling for failed unlock
+                   // print(resString["message"].stringValue)
+                    
+                    //hop back onto main stack to pop up message box
+                    DispatchQueue.main.async() {
+                        self.displayMyAlertMessage(resString["message"].stringValue)
+                    }
+                    }
+                }
+            }
+                 task.resume()
+    UIApplication.shared.isNetworkActivityIndicatorVisible = false;
         
-        task.resume()
-    }
+        //make this work for the activity spinner in top bar
+        //UIApplication.shared.isNetworkActivityIndicatorVisible = true;
+        
+        }
+    
     
     func lock()
     {
-        
+          UIApplication.shared.isNetworkActivityIndicatorVisible = true;
         let u = UserDefaults.standard.value(forKey: "userIP")!
         let url_to_lock:String = "http://\(u):3000/Lock"
+        let n = UserDefaults.standard.value(forKey: "email")!
+        let l = UserDefaults.standard.value(forKey: "LockID")!
         
-        let url:URL = URL(string: url_to_lock)!
-        let session = URLSession.shared
+        let postString = "name=\(n)&LockID=\(l)"
+        var request = URLRequest(url: URL(string: url_to_lock)!)
         
-        let request = NSMutableURLRequest(url: url)
+        //testing
+        //  print(postString)
+        //  print(url_to_unlock)
         request.httpMethod = "POST"
-        request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
+        request.httpBody = postString.data(using: .utf8)
         
-        //make this work
-        let paramString = "data=Locking at \(Timestamp)"
-        request.httpBody = paramString.data(using: String.Encoding.utf8)
-        
-        let task = session.dataTask(with: request as URLRequest, completionHandler: {
-            (
-            data, response, error) in
-            
-            guard let _:Data = data, let _:URLResponse = response  , error == nil else {
-                print("Error comunicating with server, Check IP")
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {                                                                                          // check for fundamental networking error
+                print("error=\(error)")
                 return
             }
-            //for errors
-            let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-            print(dataString! )
             
-        })
-        
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {                // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(response)")
+            }
+            
+            let responseString = String(data: data, encoding: .utf8)
+            print("responseString = \(responseString)")
+            
+            if let data = responseString?.data(using: String.Encoding.utf8) {
+                let resString = JSON(data: data)
+                
+                if resString["success"].stringValue == "true"
+                {
+                    //handle success
+                    //animate a lock shutting maybe?
+                    //print for now
+                    print(resString["message"].stringValue)
+                    DispatchQueue.main.async() {
+                        self.displayMyAlertMessage(resString["message"].stringValue)
+                    }
+                }
+                else if resString["success"].stringValue == "false"
+                {
+                    //error handling for failed unlock
+                    // print(resString["message"].stringValue)
+                    
+                    //hop back onto main stack to pop up message box
+                    DispatchQueue.main.async() {
+                        self.displayMyAlertMessage(resString["message"].stringValue)
+                    }
+                      UIApplication.shared.isNetworkActivityIndicatorVisible = false;
+                }
+            }
+        }
         task.resume()
         
+        
+        //make this work for the activity spinner in top bar
+        //UIApplication.shared.isNetworkActivityIndicatorVisible = true;
+        
     }
-   
+    
 
     @IBAction func logoutbutton(_ sender: Any) {
         UserDefaults.standard.set(false,forKey:"isUserLoggedIn");
@@ -124,8 +189,26 @@ class ViewController: UIViewController {
 
     }
     
+    func displayMyAlertMessage(_ userMessage:String)
+    {
+        
+        let myAlert = UIAlertController(title:"Alert", message:userMessage, preferredStyle: UIAlertControllerStyle.alert);
+        
+        let okAction = UIAlertAction(title:"Ok", style:UIAlertActionStyle.default, handler:nil);
+        
+        myAlert.addAction(okAction);
+        
+        self.present(myAlert, animated:true, completion:nil);
+        
+    }
+    
+
+    
+    
     //button actions
 
+    //fix this label thing
+    @IBOutlet var welcome: [UILabel]!
 
     @IBAction func lock(_ sender: UIButton) {
         lock()

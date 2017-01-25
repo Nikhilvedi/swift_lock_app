@@ -13,7 +13,9 @@ class SetupViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       let n =  UserDefaults.standard.value(forKey: "email")!
+        //improve this 
+        hello_label.text = "Hello \(n) you have no locks set up"
         // Do any additional setup after loading the view.
     }
 
@@ -26,11 +28,20 @@ class SetupViewController: UIViewController {
     
     @IBAction func setup(_ sender: Any) {
         
+        if (UserDefaults.standard.value(forKey: "userIP") == nil)
+        {
+            //make this a message box and stop the program crashing by assigning user defaults a value
+            UserDefaults.standard.set("localhost", forKey: "userIP")
+            
+            print("Local host programatically set");
+        }
         
+
         let u = UserDefaults.standard.value(forKey: "userIP")!
+        let name = UserDefaults.standard.value(forKey: "email")!
         var request = URLRequest(url: URL(string: "http://\(u):3000/users/returnLockID")!)
-        request.httpMethod = "PUT"
-        let postString = "LockID=\(LockID.text!)"
+        request.httpMethod = "POST"
+        let postString = "LockID=\(LockID.text!)&name=\(name)"
         print(postString)
         request.httpBody = postString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -52,19 +63,31 @@ class SetupViewController: UIViewController {
                 
                 if resString["success"].stringValue == "true"
                 {
+                    //dismiss window and set bool to true
                     print("works");
+                    UserDefaults.standard.set(true, forKey: "LockIDPresent")
+                    //set lockID in user defaults 
+                //    DispatchQueue.main.async() {
+                        UserDefaults.standard.set(self.LockID.text!, forKey: "LockID")
+                         //                  }
+
+                    self.dismiss(animated: true, completion: nil);
                     
                 }
                 else if resString["success"].stringValue == "false"
                 {
                     print("failed")
-                    print(resString["false"].stringValue)
+                    print(resString["message"].stringValue)
+                    
                 }
-                
+               
             }
+            
         }
     task.resume()
-    }
+        //move to else when put works
+           }
+    @IBOutlet weak var hello_label: UILabel!
 
     /*
     // MARK: - Navigation

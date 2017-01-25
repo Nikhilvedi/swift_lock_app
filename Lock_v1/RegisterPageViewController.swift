@@ -53,8 +53,16 @@ class RegisterPageViewController: UIViewController {
             return;
             
         }
-        
-        register()
+        //validate email - test this fully
+       if (isValidEmail(testStr: userEmail!) == true)
+       {
+        //if password is valid string here too, then register
+         register()
+        }
+        else
+       {
+        displayMyAlertMessage("Please enter a valid email address")
+        }
 
         email.text = "";
         password.text="";
@@ -62,6 +70,23 @@ class RegisterPageViewController: UIViewController {
         LockID.text="";
     }
     
+    func isValidEmail(testStr:String) -> Bool {
+        // print("validate calendar: \(testStr)")
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
+    }
+    
+    //fix this - the reg ex is playing up
+ //   func isValidPassword(testStr:String) -> Bool {
+        // print("validate calendar: \(testStr)")
+  //      let passwordRegEx = "{^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$}"
+        
+     //   let passwordTest = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
+      //  return passwordTest.evaluate(with: testStr)
+ //   }
+
     func register()
     {
         //store everything in user defaults
@@ -73,9 +98,11 @@ class RegisterPageViewController: UIViewController {
         if (LockID.text?.isEmpty)!
         {
             print("no lockID")
+            
               UserDefaults.standard.set(false, forKey: "LockIDPresent")
               UserDefaults.standard.synchronize()
-            
+         //   sets and sends lockID as an empty string so the field is initialised
+            LockID.text = nil;
         }
         else
         {
@@ -85,20 +112,27 @@ class RegisterPageViewController: UIViewController {
                UserDefaults.standard.synchronize()
         }
         
-        
-        let u = UserDefaults.standard.value(forKey: "userIP")!
+        if (UserDefaults.standard.value(forKey: "userIP") == nil)
+        {
+            //make this a message box and stop the program crashing by assigning user defaults a value
+            UserDefaults.standard.set("localhost", forKey: "userIP")
+            
+            print("Local host programatically set");
+        }
+
+           let u = UserDefaults.standard.value(forKey: "userIP")!
         var request = URLRequest(url: URL(string: "http://\(u):3000/users")!)
         request.httpMethod = "POST"
         let postString = "name=\(email.text!)&password=\(password.text!)&LockID=\(LockID.text!)"
         print(postString)
         request.httpBody = postString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+            guard let data = data, error == nil else {                                                                                          // check for fundamental networking error
                 print("error=\(error)")
                 return
             }
             
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {                // check for http errors
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(response)")
             }
@@ -128,6 +162,9 @@ class RegisterPageViewController: UIViewController {
             
         }
         task.resume()
+        //close the  registration page and prompt for login
+        self.dismiss(animated: true, completion: nil)
+
     }
     
     
