@@ -15,6 +15,7 @@
 		561C18E21E01ED76006172E5 /* Lock_v1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C18E11E01ED76006172E5 /* Lock_v1Tests.swift */; };
 		561C18ED1E01ED76006172E5 /* Lock_v1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C18EC1E01ED76006172E5 /* Lock_v1UITests.swift */; };
 		561C18FB1E031224006172E5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 561C18FA1E031224006172E5 /* Default-568h@2x.png */; };
+		564CFA4E1E43880F00648C43 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564CFA4D1E43880F00648C43 /* LocalAuthentication.framework */; };
 		565E13A01E43583500D8C840 /* LogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E139F1E43583500D8C840 /* LogsViewController.swift */; };
 		565E13A31E437EF900D8C840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565E13A11E437EF900D8C840 /* Main.storyboard */; };
 		5671E1961E3792900031AD69 /* AdminToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5671E1951E3792900031AD69 /* AdminToolsViewController.swift */; };
@@ -60,6 +61,8 @@
 		561C18EC1E01ED76006172E5 /* Lock_v1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lock_v1UITests.swift; sourceTree = "<group>"; };
 		561C18EE1E01ED76006172E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		561C18FA1E031224006172E5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		564CFA4D1E43880F00648C43 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		564CFA4F1E438AA800648C43 /* Lock_v1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lock_v1-Bridging-Header.h"; sourceTree = "<group>"; };
 		565E139F1E43583500D8C840 /* LogsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogsViewController.swift; path = ../LogsViewController.swift; sourceTree = "<group>"; };
 		565E13A21E437EF900D8C840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5671E1951E3792900031AD69 /* AdminToolsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminToolsViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				564CFA4E1E43880F00648C43 /* LocalAuthentication.framework in Frameworks */,
 				B6A0C16F41F6DCB30A761B48 /* Pods_Lock_v1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +108,7 @@
 		054FD96FE1A3F328FBCE23C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				564CFA4D1E43880F00648C43 /* LocalAuthentication.framework */,
 				F65BECB7ADA23E8BBDD48221 /* Pods_Lock_v1.framework */,
 				9D36824FFA0D4952BFF375CD /* Pods_Lock_v1Tests.framework */,
 				28E6CDCDFC09E2EB536BF1F2 /* Pods_Lock_v1UITests.framework */,
@@ -148,6 +153,7 @@
 				5671E1951E3792900031AD69 /* AdminToolsViewController.swift */,
 				56AB66AD1E351A3700ADF4C1 /* RegisterPageViewController.swift */,
 				56AB66AF1E351D9900ADF4C1 /* LoginViewController.swift */,
+				564CFA4F1E438AA800648C43 /* Lock_v1-Bridging-Header.h */,
 			);
 			path = Lock_v1;
 			sourceTree = "<group>";
@@ -261,6 +267,7 @@
 					561C18C81E01ED76006172E5 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 9XS2J9AH36;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					561C18DC1E01ED76006172E5 = {
@@ -626,12 +633,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 9XS2J9AH36;
 				INFOPLIST_FILE = Lock_v1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "CO.UK.nikhilvedi.Lock-v1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Lock_v1/Lock_v1-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -642,12 +652,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 9XS2J9AH36;
 				INFOPLIST_FILE = Lock_v1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "CO.UK.nikhilvedi.Lock-v1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Lock_v1/Lock_v1-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

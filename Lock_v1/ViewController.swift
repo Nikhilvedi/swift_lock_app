@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // set welcome text for label 
-        welcome.text = "Welcome \(UserDefaults.standard.value(forKey: "email")!)"
+      //  welcome.text = "Welcome \(UserDefaults.standard.value(forKey: "email")!)"
     }
     
     

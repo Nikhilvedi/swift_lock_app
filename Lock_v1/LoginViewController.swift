@@ -8,11 +8,14 @@
 
 import UIKit
 import SwiftyJSON
+import LocalAuthentication
 
 class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
+       
         super.viewDidLoad()
+         UserDefaults.standard.set("localhost", forKey: "userIP")
         //hide keyboard when anywhere tapped
          self.hideKeyboardWhenTappedAround()
        // email.borderStyle = UITextBorderStyle.none;
@@ -25,6 +28,46 @@ class LoginViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //thumb print verification when view appears
+        if UserDefaults.standard.object(forKey: "email") != nil{
+            authenticateUser();
+        }
+        else {
+           //do nothing
+        }
+    }
+
+    
+    func authenticateUser() {
+        let context = LAContext()
+        var error: NSError?
+        
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            let reason = "Use TouchID"
+            
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
+                [unowned self] success, authenticationError in
+                
+                DispatchQueue.main.async {
+                    if success {
+                        UserDefaults.standard.set(true,forKey:"isUserLoggedIn");
+                        UserDefaults.standard.synchronize();
+                        self.dismiss(animated: true, completion: nil);
+                    } else {
+                        let ac = UIAlertController(title: "Authentication failed", message: "Enter Credentials!", preferredStyle: .alert)
+                        ac.addAction(UIAlertAction(title: "OK", style: .default))
+                        self.present(ac, animated: true)
+                    }
+                }
+            }
+        } else {
+            let ac = UIAlertController(title: "Touch ID not available", message: "Your device is not configured for Touch ID.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
     }
     
     func login()

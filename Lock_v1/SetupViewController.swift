@@ -91,6 +91,9 @@ class SetupViewController: UIViewController {
            }
     @IBOutlet weak var hello_label: UILabel!
 
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
     /*
     // MARK: - Navigation
 
