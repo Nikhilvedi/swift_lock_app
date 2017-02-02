@@ -11,6 +11,7 @@
 import UIKit
 import SwiftyJSON
 
+
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
@@ -213,9 +214,7 @@ class ViewController: UIViewController {
         self.present(myAlert, animated:true, completion:nil);
         
     }
-    
-
-    
+        
 
     @IBOutlet weak var welcome: UILabel!
     
