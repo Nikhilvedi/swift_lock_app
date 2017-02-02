@@ -27,9 +27,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //why am i doing this?
-     //   UserDefaults.standard.set(false, forKey: "LockIDPresent")
-     //   UserDefaults.standard.synchronize()
+        // set welcome text for label 
+        welcome.text = "Welcome \(UserDefaults.standard.value(forKey: "email")!)"
     }
     
     
@@ -217,11 +216,12 @@ class ViewController: UIViewController {
     
 
     
+
+    @IBOutlet weak var welcome: UILabel!
     
     //button actions
 
     //fix this label thing
-    @IBOutlet var welcome: [UILabel]!
 
     @IBAction func lock(_ sender: UIButton) {
         lock()

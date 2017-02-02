@@ -15,6 +15,12 @@ class RegisterPageViewController: UIViewController {
         super.viewDidLoad()
         //hide keyboard when anywhere tapped
          self.hideKeyboardWhenTappedAround()
+        name.borderStyle = UITextBorderStyle.none;
+        email.borderStyle = UITextBorderStyle.none;
+        password.borderStyle = UITextBorderStyle.none;
+        password2.borderStyle = UITextBorderStyle.none;
+        LockID.borderStyle = UITextBorderStyle.none;
+        
 
         // Do any additional setup after loading the view.
     }
@@ -23,21 +29,23 @@ class RegisterPageViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    @IBOutlet weak var name: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var password2: UITextField!
     @IBOutlet weak var LockID: UITextField!
     
+    
     @IBAction func registerButton(_ sender: Any) {
         
+        let userName = name.text
         let userEmail = email.text
         let userPassword = password.text
         let userPasswordConfirm = password2.text
         
         //validation before sending to server 
         
-        if((userEmail?.isEmpty)! || (userPassword?.isEmpty)! || (userPasswordConfirm?.isEmpty)!)
+        if((userEmail?.isEmpty)! || (userPassword?.isEmpty)! || (userPasswordConfirm?.isEmpty)! || (userName?.isEmpty)!)
         {
             
             // Display alert message
@@ -59,17 +67,20 @@ class RegisterPageViewController: UIViewController {
        if (isValidEmail(testStr: userEmail!) == true)
        {
         //if password is valid string here too, then register
-         register()
+     //   if (isValidPassword(testStr: userPassword!) == true)
+       // {
+            register()
+        //}
+       // else {
+        //     displayMyAlertMessage("Password must contain an Uppercase, Lowercase and Special character")
+        //}
+         
         }
         else
        {
         displayMyAlertMessage("Please enter a valid email address")
         }
 
-        email.text = "";
-        password.text="";
-        password2.text="";
-        LockID.text="";
     }
     
     func isValidEmail(testStr:String) -> Bool {
@@ -80,19 +91,31 @@ class RegisterPageViewController: UIViewController {
         return emailTest.evaluate(with: testStr)
     }
     
-    //fix this - the reg ex is playing up
- //   func isValidPassword(testStr:String) -> Bool {
-        // print("validate calendar: \(testStr)")
-  //      let passwordRegEx = "{^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$}"
-        
-     //   let passwordTest = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
-      //  return passwordTest.evaluate(with: testStr)
- //   }
+    //one of xzy and two numbers - think
+    //for lockID - ^(?=.*[0-9].*[0-9])(?=.*[xzy])$
+    
+    
+    // Start anchor - password regex
+    //Ensure string has an uppercase letter.
+    //Ensure string has one special case letter.
 
+    //Ensure string has a lowercase letter.
+    //End anchor.
+    
+    func isValidPassword(testStr:String) -> Bool {
+        print("validate calendar: \(testStr)")
+        let passwordRegEx = "^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[a-z])$"
+        
+        let passwordTest = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
+       return passwordTest.evaluate(with: testStr)
+    }
+
+    
     func register()
     {
         //store everything in user defaults
         
+        UserDefaults.standard.set(name.text!, forKey: "name")
         UserDefaults.standard.set(email.text!, forKey: "email")
         UserDefaults.standard.set(password.text!, forKey: "password")
         UserDefaults.standard.synchronize()
@@ -106,6 +129,11 @@ class RegisterPageViewController: UIViewController {
          //   sets and sends lockID as an empty string so the field is initialised
             LockID.text = nil;
         }
+            //not working - fix this
+  //      else if (LockID.text?.hasPrefix("x") != true){
+            //make sure LockID starts with x
+         //   displayMyAlertMessage("Please check LockID and try again")
+   //         }
         else
         {
             print(LockID.text as Any)
@@ -116,16 +144,16 @@ class RegisterPageViewController: UIViewController {
         
         if (UserDefaults.standard.value(forKey: "userIP") == nil)
         {
-            //make this a message box and stop the program crashing by assigning user defaults a value
+            //make this a print out and stop the program crashing by assigning user defaults a value for IP
             UserDefaults.standard.set("localhost", forKey: "userIP")
             
             print("Local host programatically set");
         }
-
-           let u = UserDefaults.standard.value(forKey: "userIP")!
+        
+        let u = UserDefaults.standard.value(forKey: "userIP")!
         var request = URLRequest(url: URL(string: "http://\(u):3000/users")!)
         request.httpMethod = "POST"
-        let postString = "name=\(email.text!)&password=\(password.text!)&LockID=\(LockID.text!)"
+        let postString = "name=\(email.text!)&password=\(password.text!)&LockID=\(LockID.text!)&firstname=\(name.text!)"
         print(postString)
         request.httpBody = postString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -149,7 +177,10 @@ class RegisterPageViewController: UIViewController {
                 {
                     DispatchQueue.main.async() {
                     self.displayMyAlertMessage(resString["message"].stringValue)
+                    //close the  registration page and prompt for login if successful response from server
+                         self.dismiss(animated: true, completion: nil)
                     }
+                    
                 }
                 else if resString["success"].stringValue == "false"
                 {
@@ -164,9 +195,12 @@ class RegisterPageViewController: UIViewController {
             
         }
         task.resume()
-        //close the  registration page and prompt for login
-        self.dismiss(animated: true, completion: nil)
-
+        //set fields to empty
+        email.text = "";
+        password.text="";
+        password2.text="";
+        LockID.text="";
+        name.text="";
     }
     
     

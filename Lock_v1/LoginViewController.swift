@@ -15,6 +15,9 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         //hide keyboard when anywhere tapped
          self.hideKeyboardWhenTappedAround()
+       // email.borderStyle = UITextBorderStyle.none;
+     //   password.borderStyle = UITextBorderStyle.none;
+
 
         // Do any additional setup after loading the view.
     }
@@ -26,6 +29,7 @@ class LoginViewController: UIViewController {
     
     func login()
     {
+        
         UserDefaults.standard.set(email.text!, forKey: "email")
         UserDefaults.standard.set(password.text!, forKey: "password")
         UserDefaults.standard.synchronize()
@@ -98,6 +102,7 @@ class LoginViewController: UIViewController {
                     //pop up a box saying incorrect user please try again
                      print(resString["message"].stringValue);
                     UserDefaults.standard.set(resString["message"].stringValue,forKey:"loginFailed");
+                    //this doesnt work - fix it
                     DispatchQueue.main.async() {
                         self.displayMyAlertMessage("Your credentials are incorrect. Please check your email and password.")
                     }
@@ -117,7 +122,21 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var email: UITextField!
     
+    
+    
     @IBAction func login(_ sender: Any) {
+        
+        let userPassword = password.text
+        let userEmail = email.text
+        
+        if((userEmail?.isEmpty)! || (userPassword?.isEmpty)!)
+        {
+            // Display alert message
+            
+            displayMyAlertMessage("All fields are required");
+            
+            return;
+        }
         
         login()
         
