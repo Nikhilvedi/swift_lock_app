@@ -14,7 +14,6 @@
 		561C18D71E01ED76006172E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561C18D51E01ED76006172E5 /* LaunchScreen.storyboard */; };
 		561C18E21E01ED76006172E5 /* Lock_v1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C18E11E01ED76006172E5 /* Lock_v1Tests.swift */; };
 		561C18ED1E01ED76006172E5 /* Lock_v1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C18EC1E01ED76006172E5 /* Lock_v1UITests.swift */; };
-		561C18FB1E031224006172E5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 561C18FA1E031224006172E5 /* Default-568h@2x.png */; };
 		564CFA4E1E43880F00648C43 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564CFA4D1E43880F00648C43 /* LocalAuthentication.framework */; };
 		565E13A01E43583500D8C840 /* LogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E139F1E43583500D8C840 /* LogsViewController.swift */; };
 		565E13A31E437EF900D8C840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565E13A11E437EF900D8C840 /* Main.storyboard */; };
@@ -60,7 +59,6 @@
 		561C18E81E01ED76006172E5 /* Lock_v1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Lock_v1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		561C18EC1E01ED76006172E5 /* Lock_v1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lock_v1UITests.swift; sourceTree = "<group>"; };
 		561C18EE1E01ED76006172E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		561C18FA1E031224006172E5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		564CFA4D1E43880F00648C43 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		564CFA4F1E438AA800648C43 /* Lock_v1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lock_v1-Bridging-Header.h"; sourceTree = "<group>"; };
 		565E139F1E43583500D8C840 /* LogsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogsViewController.swift; path = ../LogsViewController.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 		561C18C01E01ED76006172E5 = {
 			isa = PBXGroup;
 			children = (
-				561C18FA1E031224006172E5 /* Default-568h@2x.png */,
 				561C18CB1E01ED76006172E5 /* Lock_v1 */,
 				561C18E01E01ED76006172E5 /* Lock_v1Tests */,
 				561C18EB1E01ED76006172E5 /* Lock_v1UITests */,
@@ -308,7 +305,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				561C18D71E01ED76006172E5 /* LaunchScreen.storyboard in Resources */,
-				561C18FB1E031224006172E5 /* Default-568h@2x.png in Resources */,
 				561C18D41E01ED76006172E5 /* Assets.xcassets in Resources */,
 				565E13A31E437EF900D8C840 /* Main.storyboard in Resources */,
 			);

@@ -28,8 +28,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //add if nil bit for this as it breaks on fresh install 
         // set welcome text for label 
-      //  welcome.text = "Welcome \(UserDefaults.standard.value(forKey: "email")!)"
+          if UserDefaults.standard.object(forKey: "email") != nil{
+            let e = UserDefaults.standard.value(forKey: "email")!
+            welcome.text = "Welcome to Cloud Locks \(e)"
+        }
+          else {
+            welcome.text = "Welcome to Cloud Locks"
+        }
     }
     
     
@@ -42,9 +49,10 @@ class ViewController: UIViewController {
        
          if(!isUserLoggedIn) {
             self.performSegue(withIdentifier: "LoginView", sender: self)
+            //testing
            // print(doesUserHaveLock)
         }
-        //add here when PUT/POST user lock works
+        
          else  if (isUserLoggedIn) && (!doesUserHaveLock)
          {
             self.performSegue(withIdentifier: "Setup", sender: self)
@@ -191,11 +199,14 @@ class ViewController: UIViewController {
     
 
     @IBAction func logoutbutton(_ sender: Any) {
+        
+        //set user to logged out 
         UserDefaults.standard.set(false,forKey:"isUserLoggedIn");
         UserDefaults.standard.synchronize();
         
         self.performSegue(withIdentifier: "LoginView", sender: self);
         
+        //remove token
         if Bundle.main.bundleIdentifier != nil {
             UserDefaults.standard.removePersistentDomain(forName: "token")
         }
@@ -214,7 +225,8 @@ class ViewController: UIViewController {
         self.present(myAlert, animated:true, completion:nil);
         
     }
-        
+    
+    @IBOutlet weak var activityForLOck: UIActivityIndicatorView!
 
     @IBOutlet weak var welcome: UILabel!
     

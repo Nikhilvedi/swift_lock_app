@@ -33,7 +33,7 @@ class SetupViewController: UIViewController {
         if (UserDefaults.standard.value(forKey: "userIP") == nil)
         {
             //make this a message box and stop the program crashing by assigning user defaults a value
-            UserDefaults.standard.set("localhost", forKey: "userIP")
+            UserDefaults.standard.set("10.73.192.51", forKey: "userIP")
             
             print("Local host programatically set");
         }
@@ -87,7 +87,7 @@ class SetupViewController: UIViewController {
             
         }
     task.resume()
-        //move to else when put works
+  
            }
     @IBOutlet weak var hello_label: UILabel!
 

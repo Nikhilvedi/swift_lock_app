@@ -44,10 +44,13 @@ class LogsViewController: UIViewController {
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(response)")
+                 DispatchQueue.main.async() {
+                self.displayMyAlertMessage("response = \(response)")
+                }
             }
             
             let responseString = String(data: data, encoding: .utf8)
-            print("responseString = \(responseString)")
+         //   print("responseString = \(responseString)")
             
             if let data = responseString?.data(using: String.Encoding.utf8) {
                 let resString = JSON(data: data)
@@ -61,7 +64,7 @@ class LogsViewController: UIViewController {
                     
                     print(returned_name);
                     print(returned_time);
-                     print(returned_type);
+                    print(returned_type);
                     DispatchQueue.main.async() {
                         update!.text = "\(returned_name.description), \(returned_type.description), \(returned_time.description)"
                         
