@@ -37,8 +37,65 @@ class ViewController: UIViewController {
           else {
             welcome.text = "Welcome to Cloud Locks"
         }
+       
     }
     
+    //check token after 3 minutes - should have expired, work on kicking user out
+    func tokenCheck()
+    {
+    DispatchQueue.main.asyncAfter(deadline: .now() + 180) {
+        
+        let u = UserDefaults.standard.value(forKey: "userIP")!
+        let e = UserDefaults.standard.value(forKey: "email")!
+        let t = UserDefaults.standard.value(forKey: "token")!
+        
+        print(t)        //this prints the stored token
+        
+        let urlPath = "http://\(u):3000/users/tokencheck"
+        let url = NSURL(string: urlPath)
+        let session = URLSession.shared
+        let request = NSMutableURLRequest(url: url! as URL)
+        request.httpMethod = "GET" // make it post if you want
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")//This is just an example, put the Content-Type that suites you
+        request.addValue(e as! String, forHTTPHeaderField: "name")
+        request.addValue(t as! String, forHTTPHeaderField: "x-access-token")
+        let task = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+            print("error=\(error)")
+            
+        if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {                // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(response)")
+            }
+            
+            let responseString = String(data: data!, encoding: .utf8)
+            print("responseString = \(responseString)")
+            
+            if let data = responseString?.data(using: String.Encoding.utf8) {
+                let resString = JSON(data: data)
+                
+                if resString["success"].stringValue == "true"
+                {
+                    print("success")
+                }
+                else if resString["success"].stringValue == "false"
+                {
+                    print(resString["message"].stringValue)
+                    //logout
+                   // UserDefaults.standard.set(false ,forKey: "isUserLoggedIn");
+                  // self.performSegue(withIdentifier: "LoginView", sender: self)
+                   self.logout()
+                
+                }
+            }
+        })
+        
+        task.resume()
+ 
+    }
+    }
+
+
+
     
     
     override func viewDidAppear(_ animated: Bool) {
@@ -57,13 +114,10 @@ class ViewController: UIViewController {
          {
             self.performSegue(withIdentifier: "Setup", sender: self)
         }
-           print(doesUserHaveLock)
+           //print(doesUserHaveLock)
+         tokenCheck()
       }
    
-    var Timestamp: String {
-        return "\(NSDate().timeIntervalSince1970 * 1000)"
-        
-    }
     
     func un_lock()
     {
@@ -197,10 +251,9 @@ class ViewController: UIViewController {
         
     }
     
-
-    @IBAction func logoutbutton(_ sender: Any) {
+    func logout(){
         
-        //set user to logged out 
+        //set user to logged out
         UserDefaults.standard.set(false,forKey:"isUserLoggedIn");
         UserDefaults.standard.synchronize();
         
@@ -211,6 +264,10 @@ class ViewController: UIViewController {
             UserDefaults.standard.removePersistentDomain(forName: "token")
         }
 
+    }
+    
+    @IBAction func logoutbutton(_ sender: Any) {
+        logout()
     }
     
     func displayMyAlertMessage(_ userMessage:String)
