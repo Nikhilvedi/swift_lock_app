@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         // set welcome text for label 
           if UserDefaults.standard.object(forKey: "email") != nil{
             let e = UserDefaults.standard.value(forKey: "email")!
-            welcome.text = "Welcome to Cloud Locks \(e)"
+            welcome.text = "Welcome to Cloud Locks, \(e)"
         }
           else {
             welcome.text = "Welcome to Cloud Locks"

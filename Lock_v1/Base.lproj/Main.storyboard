@@ -164,6 +164,13 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LcB-4y-dT9">
+                                <rect key="frame" x="0.0" y="322" width="320" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="Password:" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="iHo-nJ-2AY" customClass="JiroTextField" customModule="TextFieldEffects">
                                 <rect key="frame" x="0.0" y="239" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -185,6 +192,7 @@
                     </view>
                     <connections>
                         <outlet property="email" destination="nlJ-5M-75n" id="2sP-Gd-39S"/>
+                        <outlet property="incorrectdetails" destination="LcB-4y-dT9" id="pML-e7-6VN"/>
                         <outlet property="password" destination="iHo-nJ-2AY" id="Gzg-4b-x5Y"/>
                     </connections>
                 </viewController>

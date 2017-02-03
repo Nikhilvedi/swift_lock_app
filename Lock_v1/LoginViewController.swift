@@ -169,8 +169,10 @@ class LoginViewController: UIViewController {
                     UserDefaults.standard.set(resString["message"].stringValue,forKey:"loginFailed");
                     //this doesnt work - fix it
                     DispatchQueue.main.async() {
-                        self.displayMyAlertMessage("Your credentials are incorrect. Please check your email and password.")
+                        //self.displayMyAlertMessage("Your credentials are incorrect. Please check your email and password.")
+                          self.incorrectdetails.text = "Your credentials are incorrect. Please check your email and password."
                     }
+                  
                     
                   
                     
@@ -278,6 +280,7 @@ class LoginViewController: UIViewController {
         task.resume()
     }
 
+    @IBOutlet weak var incorrectdetails: UILabel!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var email: UITextField!
     
