@@ -43,11 +43,19 @@ class ViewController: UIViewController {
     //check token after 3 minutes - should have expired, work on kicking user out
     func tokenCheck()
     {
-    DispatchQueue.main.asyncAfter(deadline: .now() + 180) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + 60) {      //check after 60 seconds
+        var e = "noemail"
+        var t = "notoken"
         
-        let u = UserDefaults.standard.value(forKey: "userIP")!
-        let e = UserDefaults.standard.value(forKey: "email")!
-        let t = UserDefaults.standard.value(forKey: "token")!
+        let u =  UserDefaults.standard.value(forKey: "userIP")!
+        if (UserDefaults.standard.value(forKey: "email") != nil)
+        {
+         e = UserDefaults.standard.value(forKey: "email")! as! String
+        }
+        if (UserDefaults.standard.value(forKey: "token") != nil)
+        {
+         t = UserDefaults.standard.value(forKey: "token")! as! String
+        }
         
         print(t)        //this prints the stored token
         
@@ -57,8 +65,8 @@ class ViewController: UIViewController {
         let request = NSMutableURLRequest(url: url! as URL)
         request.httpMethod = "GET" // make it post if you want
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")//This is just an example, put the Content-Type that suites you
-        request.addValue(e as! String, forHTTPHeaderField: "name")
-        request.addValue(t as! String, forHTTPHeaderField: "x-access-token")
+        request.addValue(e , forHTTPHeaderField: "name")
+        request.addValue(t , forHTTPHeaderField: "x-access-token")
         let task = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             print("error=\(error)")
             
@@ -83,6 +91,7 @@ class ViewController: UIViewController {
                     //logout
                    // UserDefaults.standard.set(false ,forKey: "isUserLoggedIn");
                   // self.performSegue(withIdentifier: "LoginView", sender: self)
+                    self.displayMyAlertMessage("You have been logged off for your sequrity")
                    self.logout()
                 
                 }
@@ -94,9 +103,6 @@ class ViewController: UIViewController {
     }
     }
 
-
-
-    
     
     override func viewDidAppear(_ animated: Bool) {
         
@@ -115,7 +121,10 @@ class ViewController: UIViewController {
             self.performSegue(withIdentifier: "Setup", sender: self)
         }
            //print(doesUserHaveLock)
+        if (isUserLoggedIn == true)
+        {
          tokenCheck()
+        }
       }
    
     
@@ -259,7 +268,7 @@ class ViewController: UIViewController {
         
         self.performSegue(withIdentifier: "LoginView", sender: self);
         
-        //remove token
+        //remove/destroy token
         if Bundle.main.bundleIdentifier != nil {
             UserDefaults.standard.removePersistentDomain(forName: "token")
         }
