@@ -11,6 +11,8 @@ import SwiftyJSON
 
 class LogsViewController: UIViewController {
 
+    @IBOutlet weak var updateLock: UITextView!
+    @IBOutlet weak var updatename: UITextView!
     @IBOutlet weak var updateText: UITextView!
     
     @IBOutlet weak var textUodate: UIStackView!
@@ -26,7 +28,7 @@ class LogsViewController: UIViewController {
         
         //welcome message for the lock ID
         
-        welcomemessage.text = "Showing Lock/Unlock data for: \(email)"
+        welcomemessage.text = "Showing lock data for \(email)"
         
         //et the data from the server for that specific lock id
         
@@ -62,11 +64,19 @@ class LogsViewController: UIViewController {
                     let returned_time =  resString["message"].arrayValue.map({$0["lockTime"].stringValue})
                     let returned_type =  resString["message"].arrayValue.map({$0["type"].stringValue})
                     
-                    print(returned_name);
-                    print(returned_time);
-                    print(returned_type);
+                  // print(returned_time);
+                  //  print(returned_type);
+                    
+//                    if let string = resString.rawString()
+//                    {
+//                        print(returned_name);
+//
+                  //  }
+                    
                     DispatchQueue.main.async() {
-                        update!.text = "\(returned_name.description), \(returned_type.description), \(returned_time.description)"
+                        self.updatename!.text = "\(returned_name.description)"
+                        self.updateLock!.text = " \(returned_type.description)"
+                        self.updateText!.text = " \(returned_time.description)"
                         
                 }
                     
