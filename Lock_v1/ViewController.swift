@@ -40,10 +40,11 @@ class ViewController: UIViewController {
        
     }
     
-    //check token after 3 minutes - should have expired, work on kicking user out
+    //check token after 3 minutes - should have expired, kick user out 
+    
     func tokenCheck()
     {
-    DispatchQueue.main.asyncAfter(deadline: .now() + 60) {      //check after 60 seconds
+    DispatchQueue.main.asyncAfter(deadline: .now() + 180) {      //check after 180 seconds
         var e = "noemail"
         var t = "notoken"
         
@@ -91,7 +92,7 @@ class ViewController: UIViewController {
                     //logout
                    // UserDefaults.standard.set(false ,forKey: "isUserLoggedIn");
                   // self.performSegue(withIdentifier: "LoginView", sender: self)
-                    self.displayMyAlertMessage("You have been logged off for your sequrity")
+                //    self.displayMyAlertMessage("You have been logged off for your sequrity")
                    self.logout()
                 
                 }
@@ -121,10 +122,10 @@ class ViewController: UIViewController {
             self.performSegue(withIdentifier: "Setup", sender: self)
         }
            //print(doesUserHaveLock)
-        if (isUserLoggedIn == true)
-        {
+       // if (isUserLoggedIn == true)
+        //{
          tokenCheck()
-        }
+        //}
       }
    
     
@@ -298,7 +299,6 @@ class ViewController: UIViewController {
     
     //button actions
 
-    //fix this label thing
 
     @IBAction func lock(_ sender: UIButton) {
         lock()

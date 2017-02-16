@@ -73,7 +73,8 @@ class LoginViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     if success {
-                         if  (self.loginWithTouchID() == true)
+                        self.loginWithTouchID()
+                        if    UserDefaults.standard.bool(forKey: "issue") == true
                          {
                              self.displayMyAlertMessage("No Connection to Server, Try again")
                         }
@@ -84,11 +85,11 @@ class LoginViewController: UIViewController {
                         self.dismiss(animated: true, completion: nil);
                         }
                     }
-                        else {
-                        let ac = UIAlertController(title: "TouchID Authentication failed", message: "Enter Login Credentials", preferredStyle: .alert)
-                        ac.addAction(UIAlertAction(title: "OK", style: .default))
-                        self.present(ac, animated: true)
-                    }
+//                        else {
+//                        let ac = UIAlertController(title: "TouchID Authentication failed", message: "Enter Login Credentials", preferredStyle: .alert)
+//                        ac.addAction(UIAlertAction(title: "OK", style: .default))
+//                        self.present(ac, animated: true)
+                  //  }
                 }
             }
         } else {
@@ -100,9 +101,8 @@ class LoginViewController: UIViewController {
     }
     
     
-   func loginWithTouchID() -> Bool
-    {
-        var issue = false;
+   func loginWithTouchID() {
+        
         if (UserDefaults.standard.value(forKey: "userIP") == nil)
         {
             //make this a message box and stop the program crashing by assigning user defaults a value
@@ -110,6 +110,7 @@ class LoginViewController: UIViewController {
             
             print("Local host programatically set");
             displayMyAlertMessage("There is no IP set up, please see admin tools")
+            UserDefaults.standard.set(true, forKey: "issue")
         }
         let e = UserDefaults.standard.value(forKey: "email")!
         let p = UserDefaults.standard.value(forKey: "password")!
@@ -121,32 +122,46 @@ class LoginViewController: UIViewController {
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(error)")
-                if error?.localizedDescription == "Could not connect to the server."
+                if (error != nil)
                 {
-                issue = true
+                  UserDefaults.standard.set(true, forKey: "issue")
+                    UserDefaults.standard.synchronize()
                 }
-                return
+            return
             }
             
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(response)")
-                issue = true
+                UserDefaults.standard.set(true, forKey: "issue")
+                 UserDefaults.standard.synchronize()
                 DispatchQueue.main.async() {
                     self.displayMyAlertMessage("Authentication failed. User not found.")
                 }
             }
-            
-            
             let responseString = String(data: data, encoding: .utf8)
             //  print("responseString = \(responseString)")      //uncomment for debugging
             
             if let data = responseString?.data(using: String.Encoding.utf8) {
                 let resString = JSON(data: data)
                 
-                if resString["success"].stringValue == "true"
+                 if resString["success"].stringValue == "false"
                 {
-                    
+                    UserDefaults.standard.set(true, forKey: "issue")
+                     UserDefaults.standard.synchronize()
+                    //pop up a box saying incorrect user please try again
+                    print(resString["message"].stringValue);
+                    UserDefaults.standard.set(resString["message"].stringValue,forKey:"loginFailed");
+                    //this doesnt work - fix it
+                    DispatchQueue.main.async() {
+                        //self.displayMyAlertMessage("Your credentials are incorrect. Please check your email and password.")
+                        self.incorrectdetails.text = "Your credentials are incorrect. Please check your email and password."
+                    }
+                 }
+                
+                else if resString["success"].stringValue == "true"
+                {
+                    UserDefaults.standard.set(false, forKey: "issue")
                     //save token to user standards
                     UserDefaults.standard.set((resString["token"].stringValue), forKey: "token")
                     UserDefaults.standard.synchronize()
@@ -174,28 +189,11 @@ class LoginViewController: UIViewController {
                     self.dismiss(animated: true, completion: nil);
                     
                 }
-                else if resString["success"].stringValue == "false"
-                {
-                    issue = true;
-                    //pop up a box saying incorrect user please try again
-                    print(resString["message"].stringValue);
-                    UserDefaults.standard.set(resString["message"].stringValue,forKey:"loginFailed");
-                    //this doesnt work - fix it
-                    DispatchQueue.main.async() {
-                        //self.displayMyAlertMessage("Your credentials are incorrect. Please check your email and password.")
-                          self.incorrectdetails.text = "Your credentials are incorrect. Please check your email and password."
-                    }
-                  
-                    
-                  
-                    
-                }
                 
             }
             
         }
         task.resume()
-        return issue;
     }
 
     
@@ -223,7 +221,10 @@ class LoginViewController: UIViewController {
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(error)")
-                issue = true
+                if error?.localizedDescription == "Could not connect to the server."
+                {
+                    issue = true
+                }
                 return
             }
             

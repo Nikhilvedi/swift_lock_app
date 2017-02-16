@@ -17,6 +17,7 @@
 		564CFA4E1E43880F00648C43 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564CFA4D1E43880F00648C43 /* LocalAuthentication.framework */; };
 		565E13A01E43583500D8C840 /* LogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E139F1E43583500D8C840 /* LogsViewController.swift */; };
 		565E13A31E437EF900D8C840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565E13A11E437EF900D8C840 /* Main.storyboard */; };
+		5661892C1E55CCAD00203DAA /* ScanQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5661892B1E55CCAD00203DAA /* ScanQRViewController.swift */; };
 		5671E1961E3792900031AD69 /* AdminToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5671E1951E3792900031AD69 /* AdminToolsViewController.swift */; };
 		5671E1981E37C5DD0031AD69 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5671E1971E37C5DD0031AD69 /* SetupViewController.swift */; };
 		56AB66AE1E351A3700ADF4C1 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AB66AD1E351A3700ADF4C1 /* RegisterPageViewController.swift */; };
@@ -63,6 +64,7 @@
 		564CFA4F1E438AA800648C43 /* Lock_v1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lock_v1-Bridging-Header.h"; sourceTree = "<group>"; };
 		565E139F1E43583500D8C840 /* LogsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogsViewController.swift; path = ../LogsViewController.swift; sourceTree = "<group>"; };
 		565E13A21E437EF900D8C840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5661892B1E55CCAD00203DAA /* ScanQRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanQRViewController.swift; sourceTree = "<group>"; };
 		5671E1951E3792900031AD69 /* AdminToolsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminToolsViewController.swift; sourceTree = "<group>"; };
 		5671E1971E37C5DD0031AD69 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		56AB66AD1E351A3700ADF4C1 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				565E13A11E437EF900D8C840 /* Main.storyboard */,
+				5661892B1E55CCAD00203DAA /* ScanQRViewController.swift */,
 				561C18CC1E01ED76006172E5 /* AppDelegate.swift */,
 				561C18D31E01ED76006172E5 /* Assets.xcassets */,
 				561C18D51E01ED76006172E5 /* LaunchScreen.storyboard */,
@@ -473,6 +476,7 @@
 				561C18CF1E01ED76006172E5 /* ViewController.swift in Sources */,
 				561C18CD1E01ED76006172E5 /* AppDelegate.swift in Sources */,
 				5671E1961E3792900031AD69 /* AdminToolsViewController.swift in Sources */,
+				5661892C1E55CCAD00203DAA /* ScanQRViewController.swift in Sources */,
 				565E13A01E43583500D8C840 /* LogsViewController.swift in Sources */,
 				5671E1981E37C5DD0031AD69 /* SetupViewController.swift in Sources */,
 				56AB66AE1E351A3700ADF4C1 /* RegisterPageViewController.swift in Sources */,

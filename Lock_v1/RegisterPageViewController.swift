@@ -176,11 +176,11 @@ class RegisterPageViewController: UIViewController {
                 if resString["success"].stringValue == "true"
                 {
                     DispatchQueue.main.async() {
-                    self.displayMyAlertMessage(resString["message"].stringValue)
+                   // self.displayMyAlertMessage(resString["message"].stringValue)
                     //close the  registration page and prompt for login if successful response from server
-                         self.dismiss(animated: true, completion: nil)
+                       
                     }
-                    
+                   self.dismiss(animated: true, completion: nil)
                 }
                 else if resString["success"].stringValue == "false"
                 {

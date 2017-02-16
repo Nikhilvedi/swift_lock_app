@@ -15,10 +15,18 @@ class SetupViewController: UIViewController {
         super.viewDidLoad()
         //hide keyboard when anywhere tapped
          self.hideKeyboardWhenTappedAround()
+       
         let n =  UserDefaults.standard.value(forKey: "email")!
         //improve this 
         hello_label.text = "Hello \(n) you have no locks set up"
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if    UserDefaults.standard.bool(forKey: "LockIDPresent") == true
+        {
+            self.dismiss(animated: true)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,7 +41,7 @@ class SetupViewController: UIViewController {
         if (UserDefaults.standard.value(forKey: "userIP") == nil)
         {
             //make this a message box and stop the program crashing by assigning user defaults a value
-            UserDefaults.standard.set("10.73.192.51", forKey: "userIP")
+            UserDefaults.standard.set("localhost", forKey: "userIP")
             
             print("Local host programatically set");
         }
@@ -41,6 +49,7 @@ class SetupViewController: UIViewController {
 
         let u = UserDefaults.standard.value(forKey: "userIP")!
         let name = UserDefaults.standard.value(forKey: "email")!
+        UserDefaults.standard.synchronize()
         var request = URLRequest(url: URL(string: "http://\(u):3000/users/returnLockID")!)
         request.httpMethod = "POST"
         let postString = "LockID=\(LockID.text!)&name=\(name)"
@@ -68,11 +77,9 @@ class SetupViewController: UIViewController {
                     //dismiss window and set bool to true
                     print("works");
                     UserDefaults.standard.set(true, forKey: "LockIDPresent")
-                    //set lockID in user defaults 
-                //    DispatchQueue.main.async() {
-                        UserDefaults.standard.set(self.LockID.text!, forKey: "LockID")
-                         //                  }
-
+                    //set lockID in user defaults
+                    UserDefaults.standard.set(self.LockID.text!, forKey: "LockID")
+                     UserDefaults.standard.synchronize()
                     self.dismiss(animated: true, completion: nil);
                     
                 }
