@@ -30,6 +30,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         //add if nil bit for this as it breaks on fresh install 
         // set welcome text for label 
+            UserDefaults.standard.synchronize();
+        
           if UserDefaults.standard.object(forKey: "email") != nil{
             let e = UserDefaults.standard.value(forKey: "email")!
             welcome.text = "Welcome to Cloud Locks, \(e)"

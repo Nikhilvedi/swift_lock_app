@@ -62,11 +62,14 @@ class LoginViewController: UIViewController {
     
     
     func authenticateUser() {
+        var e = "";
+        if UserDefaults.standard.object(forKey: "email") != nil{
+           e = UserDefaults.standard.value(forKey: "email")! as! String}
+        else { e = "use TouchID to authenticate"}
         let context = LAContext()
         var error: NSError?
-        
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            let reason = "Use TouchID to authenticate"
+            let reason = "\(e)"
             
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
                 [unowned self] success, authenticationError in

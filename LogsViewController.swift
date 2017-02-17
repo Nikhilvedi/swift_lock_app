@@ -24,7 +24,6 @@ class LogsViewController: UIViewController {
         let lockid = UserDefaults.standard.value(forKey: "LockID")!
         let email = UserDefaults.standard.value(forKey: "email")!
         
-                let update = updateText;
         
         //welcome message for the lock ID
         
