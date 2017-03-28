@@ -33,8 +33,8 @@ class ViewController: UIViewController {
             UserDefaults.standard.synchronize();
         
           if UserDefaults.standard.object(forKey: "email") != nil{
-            let e = UserDefaults.standard.value(forKey: "email")!
-            welcome.text = "Welcome to Cloud Locks, \(e)"
+         //   let e = UserDefaults.standard.value(forKey: "email")!
+            welcome.text = "Welcome to Cloud Locks"
         }
           else {
             welcome.text = "Welcome to Cloud Locks"
