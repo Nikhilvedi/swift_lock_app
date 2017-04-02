@@ -74,7 +74,6 @@
 		69FADA9D271ABABC629E4E9E /* Pods-Lock_v1Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lock_v1Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lock_v1Tests/Pods-Lock_v1Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6DD1E9D7C7DB71AB326F277B /* Pods-Lock_v1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lock_v1Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lock_v1Tests/Pods-Lock_v1Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9D36824FFA0D4952BFF375CD /* Pods_Lock_v1Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lock_v1Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D21DACDACDB8205EDE83E9E7 /* Pods-Lock_v1UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lock_v1UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lock_v1UITests/Pods-Lock_v1UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F65BECB7ADA23E8BBDD48221 /* Pods_Lock_v1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lock_v1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -143,13 +142,13 @@
 		561C18CB1E01ED76006172E5 /* Lock_v1 */ = {
 			isa = PBXGroup;
 			children = (
+				561C18D31E01ED76006172E5 /* Assets.xcassets */,
+				561C18D81E01ED76006172E5 /* Info.plist */,
 				565E13A11E437EF900D8C840 /* Main.storyboard */,
 				565231781E9126D3009A13C3 /* updatePasswordViewController.swift */,
 				5661892B1E55CCAD00203DAA /* ScanQRViewController.swift */,
 				561C18CC1E01ED76006172E5 /* AppDelegate.swift */,
-				561C18D31E01ED76006172E5 /* Assets.xcassets */,
 				561C18D51E01ED76006172E5 /* LaunchScreen.storyboard */,
-				561C18D81E01ED76006172E5 /* Info.plist */,
 				561C18CE1E01ED76006172E5 /* ViewController.swift */,
 				56D166731E8D5C1200B567A6 /* LogsViewController.swift */,
 				5671E1971E37C5DD0031AD69 /* SetupViewController.swift */,
@@ -186,7 +185,6 @@
 				2DD6F65FACAA0021065E65B1 /* Pods-Lock_v1.release.xcconfig */,
 				69FADA9D271ABABC629E4E9E /* Pods-Lock_v1Tests.debug.xcconfig */,
 				6DD1E9D7C7DB71AB326F277B /* Pods-Lock_v1Tests.release.xcconfig */,
-				D21DACDACDB8205EDE83E9E7 /* Pods-Lock_v1UITests.debug.xcconfig */,
 				3EB13707D712DD1BDC1B1CC0 /* Pods-Lock_v1UITests.release.xcconfig */,
 			);
 			name = Pods;
@@ -700,7 +698,6 @@
 		};
 		561C18F81E01ED76006172E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D21DACDACDB8205EDE83E9E7 /* Pods-Lock_v1UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = Lock_v1UITests/Info.plist;

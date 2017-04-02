@@ -6,6 +6,7 @@ target 'Lock_v1' do
   use_frameworks!
      pod 'SwiftyJSON', :git => 'https://github.com/appsailor/SwiftyJSON.git', :branch => 'swift3'
      pod 'TextFieldEffects'
+     pod 'Navajo-Swift'
   # Pods for Lock_v1
 
   target 'Lock_v1Tests' do

@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Email:" minimumFontSize="15" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="BR4-D7-on0" customClass="HoshiTextField" customModule="TextFieldEffects" colorLabel="IBBuiltInLabel-Red">
-                                <rect key="frame" x="0.0" y="201" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="123" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -36,7 +36,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Password:" minimumFontSize="15" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="lfy-Ng-6CU" customClass="HoshiTextField" customModule="TextFieldEffects" colorLabel="IBBuiltInLabel-Red">
-                                <rect key="frame" x="0.0" y="259" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="181" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -48,9 +48,12 @@
                                         <color key="value" red="1" green="0.078622190559999999" blue="0.089657637080000005" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="passwordChanged:" destination="csW-zi-pp8" eventType="editingChanged" id="WQy-y4-DkQ"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Repeat password:" minimumFontSize="15" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="k0m-OW-yMu" customClass="HoshiTextField" customModule="TextFieldEffects" colorLabel="IBBuiltInLabel-Red">
-                                <rect key="frame" x="0.0" y="317" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="239" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -94,6 +97,20 @@
                                     <action selector="back:" destination="csW-zi-pp8" eventType="touchUpInside" id="z20-dM-63u"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqx-z0-bdg">
+                                <rect key="frame" x="0.0" y="338" width="320" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.078622190559999999" blue="0.089657637080000005" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password Strength: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1p-2d-ydj">
+                                <rect key="frame" x="0.0" y="309" width="325" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -101,11 +118,12 @@
                         <outlet property="email" destination="BR4-D7-on0" id="0OI-5X-Q5t"/>
                         <outlet property="password1" destination="lfy-Ng-6CU" id="t84-Mr-4CT"/>
                         <outlet property="password2" destination="k0m-OW-yMu" id="NVt-jA-xxP"/>
+                        <outlet property="strengthLabel" destination="kqx-z0-bdg" id="wbt-7a-Fsw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X4G-Zf-5Xx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-56" y="940"/>
+            <point key="canvasLocation" x="-56.25" y="939.08450704225356"/>
         </scene>
         <!--protected-->
         <scene sceneID="tne-QT-ifu">

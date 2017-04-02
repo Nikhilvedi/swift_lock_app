@@ -9,6 +9,7 @@
 import UIKit
 import TextFieldEffects
 import SwiftyJSON
+import Navajo_Swift
 
 class updatePasswordViewController: UIViewController {
 
@@ -18,6 +19,12 @@ class updatePasswordViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func passwordChanged(_ sender: Any) {
+        let password1 = self.password1.text
+        let strength = Navajo.strength(of: password1!)
+        strengthLabel.text = Navajo.localizedString(for: strength)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -32,6 +39,8 @@ class updatePasswordViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
 
     }
+
+    @IBOutlet weak var strengthLabel: UILabel!
     @IBOutlet weak var password2: HoshiTextField!
     
     @IBAction func submit(_ sender: Any) {

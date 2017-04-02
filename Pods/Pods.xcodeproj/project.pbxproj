@@ -7,128 +7,143 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02AABCCBA7E99CDA5156168E0E762673 /* YokoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8883CD7F691EBA5DB33CB55F1555EA6 /* YokoTextField.swift */; };
+		0299D4FD7CDA1BDCD485CFBAD7FCB5A4 /* IsaoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D302CFFE8DBCBC4AE48D156C5F9D4B /* IsaoTextField.swift */; };
+		0317252A4A6C558FC9B967AB0BA5137D /* TextFieldEffects-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D6ED6C5C1557ACE9F7932130C67EC4AA /* TextFieldEffects-dummy.m */; };
+		0363F05279C8838E211A639AFA6F84B1 /* KaedeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C4FD7FFC2DB6BEB750475DEBB8ABDD /* KaedeTextField.swift */; };
 		044169EA58A69E2E17AA51EA894C655F /* Pods-Lock_v1Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DF3FCA43315D477C266A4AB10FE38C /* Pods-Lock_v1Tests-dummy.m */; };
-		0A6A0F94484527942AC3A0D0BA749F01 /* MinoruTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC139650EE5BC09A6938F6EC8A9D344 /* MinoruTextField.swift */; };
-		227D828FAD021B551679D72336E345FD /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC0DDE7C7B1DD3E26716E02076AB460 /* SwiftyJSON-dummy.m */; };
-		258926628564E3876E4A0BEB494EED17 /* IsaoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979AD71D0B6650292CB098CF9EB7F0B5 /* IsaoTextField.swift */; };
-		33482C746AA2CBBECB65B4DD6631A81D /* TextFieldEffects-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EA78654284407AE8E36CBF785A53B07 /* TextFieldEffects-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		42937FC490FAD224EE499E86F6E17C4A /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB46A461110DBD74B384EB7236087D3B /* SwiftyJSON.swift */; };
-		62677658CB5DBB5EA89E6C436851E655 /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A4F1B97601328015D3DDC6E9E2A252 /* TextFieldsEffects.swift */; };
-		7456BFD00F2C20456DC8DB938F2381CF /* KaedeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D25A1B24E10783EE77C007032B7EE7 /* KaedeTextField.swift */; };
-		7A31B7D4C4A85CD71B1DB0C8E8BE69A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		0B061AAFBF2222B42B9CC5340C4709EE /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C179B133FE59B840A93D209A73C446 /* SwiftyJSON.swift */; };
+		0D03C50E1E0E1AF468822F9C56215AA5 /* TextFieldEffects-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 35A7614AED701FF78C1F162D4A799F3D /* TextFieldEffects-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		183BB05D9B228104F232F31C63417CBB /* Navajo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3959D4852127D18EAEC4D2B4D4561C52 /* Navajo.swift */; };
+		2184E630FEDAF7789D30776A7870ECD2 /* YokoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9433109A154F352936F2AF8C7758A2AC /* YokoTextField.swift */; };
+		346D135DA187453582BC31D494DB6DC0 /* Pods-Lock_v1-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2D63B1B1AFE552AA66DB0C034D8B30 /* Pods-Lock_v1-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		409E19A43CB26144ED3015A2F4604AF0 /* NJOPasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1468331DD9BF3EBB864AC6D2E89D8419 /* NJOPasswordValidator.swift */; };
+		41BBE279C654B94D2B02EA336480116C /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41322FB074CB12EBA4813B5487749FF7 /* TextFieldsEffects.swift */; };
+		4261198CE34204F079AAC57D3541942D /* Navajo-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 828FBFAA746096A671F5328802E50330 /* Navajo-Swift-dummy.m */; };
+		5A59D28CC17B87700D1E08C9D28DC9A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		5F61E4FF0E811C53082EB408303115B7 /* YoshikoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1A36D36572AC0838A41508C7BADDF2 /* YoshikoTextField.swift */; };
 		7D4694B46E7B5A286F1B80F729C92D2C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		7FF5657E8FE0481C586F5624DDA275C9 /* JiroTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD152122F35BC6FA9992D0D5EF7592 /* JiroTextField.swift */; };
-		81F73D0E683D406FB9314B63DC853837 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		7EEA64CCC5E3B9F62708816D910B59B2 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B580C7DADF25704CDC25F027A2051C17 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8BC25441C2C1555EB94A5BE9E334EE9C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		8D83FCBD5ACCFCD746A48644D62B45CD /* YoshikoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF050DF8B4F278B191AC059F33A7067 /* YoshikoTextField.swift */; };
-		A4AF6D4D696642DD55490A589B619806 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D9592DC8B5F12668C5C392874F2CCB /* HoshiTextField.swift */; };
-		A4FBAAD06BE05ECF4226C4E50C0A715A /* MadokaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FBBB19C6C94A94AFF9E05E80FBB98A /* MadokaTextField.swift */; };
-		A7A9CC98F62A2A0784DB640391A137E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		A97E3D738C3CC401F2A45CEB4BBAC1D9 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A244D6B0303DD0EEC22D99D49E364805 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		94E7F2AEC9830931DACEFFFA7EC4B55B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		999948D1EC4620E4B26215AA8B48897E /* Pods-Lock_v1-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DBED2D8BC34FB114A318979FABFD038 /* Pods-Lock_v1-dummy.m */; };
+		A25E02870E131E27AF0838F87DE29459 /* JiroTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FA28EC42CA02FBE5F2A2996B711AD5 /* JiroTextField.swift */; };
+		A9CDF4B17525C6C1B38974553E03EDE5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		ADDDF23B106AD3DF76F90FF73E6DCA3F /* MadokaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9157F3CC7877FB803BBA325108E9A52 /* MadokaTextField.swift */; };
+		B6F4FC16D0F520F8D71C8300B22DE84E /* AkiraTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF480DB6EE8A104FB1AFC37861D692 /* AkiraTextField.swift */; };
+		B89D1EDD8512643E0DB2A80DAA9D091F /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F872EED5967369CBFE4A9C498BCA1FD /* HoshiTextField.swift */; };
 		BBB6E3CB043C18D7E700F4E877F424CF /* Pods-Lock_v1UITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C755EDA7AC3D617493EF7E867E486B /* Pods-Lock_v1UITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE6D0151959F59A8CC8189FB2123BAA3 /* Navajo-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 18AAC8898C89E22BCE7CCE4A5EEDDDEA /* Navajo-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C866CA9C4BD3A02A9A2D13A0DB83137D /* Pods-Lock_v1Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8776FC7F763814B62705D40CFF45C514 /* Pods-Lock_v1Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CA8628DBF14934F65CBA2DFEBF487BD8 /* Pods-Lock_v1-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2D63B1B1AFE552AA66DB0C034D8B30 /* Pods-Lock_v1-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D14EF25BBCBB062A9C584C915C81F440 /* TextFieldEffects-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F3E697B72D6380007D791177C43C40 /* TextFieldEffects-dummy.m */; };
-		EBBF4B7D636E768A4FCC969D83A607AA /* AkiraTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DA3037B502F3F22BB35AF5007031D1 /* AkiraTextField.swift */; };
-		EC2823AA5F662D5D5601F1AC7B47DF39 /* Pods-Lock_v1-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DBED2D8BC34FB114A318979FABFD038 /* Pods-Lock_v1-dummy.m */; };
+		CD09D25AAE4F363AE1103270D40DE860 /* MinoruTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBA316FA315F2648D39B0A684A4B830 /* MinoruTextField.swift */; };
+		DC076950FF65A34B9BC04BCA41917291 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		F4FB62994D4B9FB0636149E9A23EAE6F /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B73D7AE8B7295BC2007E02C60B0974E2 /* SwiftyJSON-dummy.m */; };
+		FBC65D26ACBA0B5A89C83DE8D0662692 /* NJOPasswordRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8650307CE9B3EE52F571C690E8661F81 /* NJOPasswordRule.swift */; };
 		FE55F7A7B948DD0DFEFA81BDD94593A5 /* Pods-Lock_v1UITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6F56FDA05EF0138639DB81A4692E34 /* Pods-Lock_v1UITests-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		781BF2BA7F5409F6A2C9827157582D55 /* PBXContainerItemProxy */ = {
+		B32AC8B2245068830AFCE0B582150F21 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A269990C708D9D8CDD03DACE9DFD2293;
+			remoteGlobalIDString = 6769774FB844688204ED6A149C3B6724;
 			remoteInfo = SwiftyJSON;
 		};
-		FD1884B7CBCC159542414DF6889393B8 /* PBXContainerItemProxy */ = {
+		BAA2487D9A95D3DFB58BC4421AE4CAA4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 46F94CAF482A73248C088D7D419250F4;
+			remoteGlobalIDString = 9560D58097B10285BE63A2E9F110AF8F;
 			remoteInfo = TextFieldEffects;
+		};
+		EF8DF813AC72369E3E6033DC20766DD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 015AAC4618F33550E8C400890E3DCF90;
+			remoteInfo = "Navajo-Swift";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		00C755EDA7AC3D617493EF7E867E486B /* Pods-Lock_v1UITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Lock_v1UITests-umbrella.h"; sourceTree = "<group>"; };
-		07F166B831C64DD9B941C8C6D24D33A1 /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
+		01FA28EC42CA02FBE5F2A2996B711AD5 /* JiroTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JiroTextField.swift; path = TextFieldEffects/TextFieldEffects/JiroTextField.swift; sourceTree = "<group>"; };
 		08739818F33973ADB36644A345413362 /* Pods-Lock_v1Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Lock_v1Tests-frameworks.sh"; sourceTree = "<group>"; };
-		09A4F1B97601328015D3DDC6E9E2A252 /* TextFieldsEffects.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextFieldsEffects.swift; path = TextFieldEffects/TextFieldEffects/TextFieldsEffects.swift; sourceTree = "<group>"; };
-		0CF050DF8B4F278B191AC059F33A7067 /* YoshikoTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YoshikoTextField.swift; path = TextFieldEffects/TextFieldEffects/YoshikoTextField.swift; sourceTree = "<group>"; };
+		0F4C6977E21C35492DCC48A72EB799D3 /* TextFieldEffects.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TextFieldEffects.framework; path = TextFieldEffects.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1468331DD9BF3EBB864AC6D2E89D8419 /* NJOPasswordValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NJOPasswordValidator.swift; path = Source/NJOPasswordValidator.swift; sourceTree = "<group>"; };
+		18AAC8898C89E22BCE7CCE4A5EEDDDEA /* Navajo-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Navajo-Swift-umbrella.h"; sourceTree = "<group>"; };
 		18C2D9F2907633F7C673683533FBA4F2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		22DA3037B502F3F22BB35AF5007031D1 /* AkiraTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AkiraTextField.swift; path = TextFieldEffects/TextFieldEffects/AkiraTextField.swift; sourceTree = "<group>"; };
-		2C8320ED0E4EAD4D2D6DAE9BECE4863F /* Pods_Lock_v1UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Lock_v1UITests.framework; path = "Pods-Lock_v1UITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26494C25678318A9D6D85126644A9BAC /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
+		2B0CDEAF7993685B73F5012778A56490 /* Navajo-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Navajo-Swift.modulemap"; sourceTree = "<group>"; };
 		2C9151C21F21B8F52C346B9D08E46D49 /* Pods-Lock_v1UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Lock_v1UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2CBACD1885E642F86A53B48B801E27B3 /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
 		2DB38E6C1BC0D2F0A4358B54138B76FF /* Pods-Lock_v1-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Lock_v1-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3008DE115CF6DAA3529A71BF69E3D291 /* Pods-Lock_v1.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Lock_v1.modulemap"; sourceTree = "<group>"; };
-		3368956C99DB97C04C31BC62F1738DA3 /* TextFieldEffects-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TextFieldEffects-prefix.pch"; sourceTree = "<group>"; };
-		35ED96BC756835AC41A7C8D38BEF3CD4 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35A7614AED701FF78C1F162D4A799F3D /* TextFieldEffects-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TextFieldEffects-umbrella.h"; sourceTree = "<group>"; };
+		3959D4852127D18EAEC4D2B4D4561C52 /* Navajo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Navajo.swift; path = Source/Navajo.swift; sourceTree = "<group>"; };
 		3BD275C717A8215F8AA5F72DB3FB36B6 /* Pods-Lock_v1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Lock_v1.release.xcconfig"; sourceTree = "<group>"; };
-		3DAD152122F35BC6FA9992D0D5EF7592 /* JiroTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JiroTextField.swift; path = TextFieldEffects/TextFieldEffects/JiroTextField.swift; sourceTree = "<group>"; };
-		3DC2D764CF39070B78DF9A2C9011B0CA /* TextFieldEffects.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TextFieldEffects.framework; path = TextFieldEffects.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E83B8B69B2FCF118526F6B5ADE8BCAC /* TextFieldEffects.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = TextFieldEffects.modulemap; sourceTree = "<group>"; };
+		41322FB074CB12EBA4813B5487749FF7 /* TextFieldsEffects.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextFieldsEffects.swift; path = TextFieldEffects/TextFieldEffects/TextFieldsEffects.swift; sourceTree = "<group>"; };
+		41FC4CDF42227B28ABCA2F19F76793FB /* Pods_Lock_v1Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Lock_v1Tests.framework; path = "Pods-Lock_v1Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D4AA4B275B229D01A3B8ACDFFE8FF5 /* Pods-Lock_v1UITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Lock_v1UITests-frameworks.sh"; sourceTree = "<group>"; };
-		45D9592DC8B5F12668C5C392874F2CCB /* HoshiTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HoshiTextField.swift; path = TextFieldEffects/TextFieldEffects/HoshiTextField.swift; sourceTree = "<group>"; };
-		46021849B18E806A0DCEB2E8A424E867 /* Pods_Lock_v1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Lock_v1.framework; path = "Pods-Lock_v1.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43AB8AB5CACADCCBA7CEE909C1E0716B /* Navajo_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Navajo_Swift.framework; path = "Navajo-Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A6B5E0C8627DE5A29F55042C248431E /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DD6497819D4DC05AC73B5F5CFCDFD41 /* Pods_Lock_v1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Lock_v1.framework; path = "Pods-Lock_v1.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DF8651251DA91A58AE8AD8858F13865 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F872EED5967369CBFE4A9C498BCA1FD /* HoshiTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HoshiTextField.swift; path = TextFieldEffects/TextFieldEffects/HoshiTextField.swift; sourceTree = "<group>"; };
+		525B57964EEEE9C80CBC114F56543394 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		533500D5063F5E0D5A59399D058E63AA /* Pods-Lock_v1Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Lock_v1Tests-resources.sh"; sourceTree = "<group>"; };
 		5B2D63B1B1AFE552AA66DB0C034D8B30 /* Pods-Lock_v1-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Lock_v1-umbrella.h"; sourceTree = "<group>"; };
 		5EC07483E9B18CF3112DA6474B3D7E21 /* Pods-Lock_v1UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Lock_v1UITests.release.xcconfig"; sourceTree = "<group>"; };
-		630D8A0B833077C221B39DECE382CCDB /* Pods_Lock_v1Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Lock_v1Tests.framework; path = "Pods-Lock_v1Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F1A36D36572AC0838A41508C7BADDF2 /* YoshikoTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YoshikoTextField.swift; path = TextFieldEffects/TextFieldEffects/YoshikoTextField.swift; sourceTree = "<group>"; };
 		6583DD503F7B36F88C7C7F762E94020E /* Pods-Lock_v1Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Lock_v1Tests.modulemap"; sourceTree = "<group>"; };
 		6C695C29FF3BF786B178BB5FF6A1CDAC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D6F56FDA05EF0138639DB81A4692E34 /* Pods-Lock_v1UITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Lock_v1UITests-dummy.m"; sourceTree = "<group>"; };
-		6EA78654284407AE8E36CBF785A53B07 /* TextFieldEffects-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TextFieldEffects-umbrella.h"; sourceTree = "<group>"; };
-		70F3E697B72D6380007D791177C43C40 /* TextFieldEffects-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TextFieldEffects-dummy.m"; sourceTree = "<group>"; };
-		7370B7B017F9C5C585D472C56D6F25B0 /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
-		74684E62C9C3F43996012F85CF499BC7 /* TextFieldEffects.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TextFieldEffects.xcconfig; sourceTree = "<group>"; };
-		7E45E2D99212CA5E14EAEA33A40E760E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7ACF480DB6EE8A104FB1AFC37861D692 /* AkiraTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AkiraTextField.swift; path = TextFieldEffects/TextFieldEffects/AkiraTextField.swift; sourceTree = "<group>"; };
 		7EC40E28BE5F58C604B4CEA67F4F3838 /* Pods-Lock_v1Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Lock_v1Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		80FBBB19C6C94A94AFF9E05E80FBB98A /* MadokaTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MadokaTextField.swift; path = TextFieldEffects/TextFieldEffects/MadokaTextField.swift; sourceTree = "<group>"; };
+		81F79C02C0B5E0F21505EB1BFA46936C /* Navajo-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Navajo-Swift-prefix.pch"; sourceTree = "<group>"; };
+		828FBFAA746096A671F5328802E50330 /* Navajo-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Navajo-Swift-dummy.m"; sourceTree = "<group>"; };
 		82AE67623EDB98AB2EF1CEA459AB0C18 /* Pods-Lock_v1Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Lock_v1Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		83D1ADA2017E63EB2379864A0B706BA0 /* Pods-Lock_v1UITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Lock_v1UITests.modulemap"; sourceTree = "<group>"; };
 		846F1843AC0DE7CD5D452EA5DCD0C2A1 /* Pods-Lock_v1-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Lock_v1-resources.sh"; sourceTree = "<group>"; };
+		8650307CE9B3EE52F571C690E8661F81 /* NJOPasswordRule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NJOPasswordRule.swift; path = Source/NJOPasswordRule.swift; sourceTree = "<group>"; };
 		8776FC7F763814B62705D40CFF45C514 /* Pods-Lock_v1Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Lock_v1Tests-umbrella.h"; sourceTree = "<group>"; };
-		91840967030246527CF66E1BA4854882 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92D302CFFE8DBCBC4AE48D156C5F9D4B /* IsaoTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IsaoTextField.swift; path = TextFieldEffects/TextFieldEffects/IsaoTextField.swift; sourceTree = "<group>"; };
 		92DF3FCA43315D477C266A4AB10FE38C /* Pods-Lock_v1Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Lock_v1Tests-dummy.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		962D67810028C5BCC324AE13204C292B /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
-		979AD71D0B6650292CB098CF9EB7F0B5 /* IsaoTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IsaoTextField.swift; path = TextFieldEffects/TextFieldEffects/IsaoTextField.swift; sourceTree = "<group>"; };
+		9433109A154F352936F2AF8C7758A2AC /* YokoTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YokoTextField.swift; path = TextFieldEffects/TextFieldEffects/YokoTextField.swift; sourceTree = "<group>"; };
 		9AA5739B3529C603354BB36BBD0ECCA1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DBA316FA315F2648D39B0A684A4B830 /* MinoruTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MinoruTextField.swift; path = TextFieldEffects/TextFieldEffects/MinoruTextField.swift; sourceTree = "<group>"; };
 		9DBED2D8BC34FB114A318979FABFD038 /* Pods-Lock_v1-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Lock_v1-dummy.m"; sourceTree = "<group>"; };
-		A244D6B0303DD0EEC22D99D49E364805 /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
 		A8C064112DCF8FB38674281A65AC45E1 /* Pods-Lock_v1-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Lock_v1-acknowledgements.plist"; sourceTree = "<group>"; };
+		A8C179B133FE59B840A93D209A73C446 /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
 		AD275639310ADC747D4D828E31BB4DAD /* Pods-Lock_v1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Lock_v1Tests.release.xcconfig"; sourceTree = "<group>"; };
-		ADC139650EE5BC09A6938F6EC8A9D344 /* MinoruTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MinoruTextField.swift; path = TextFieldEffects/TextFieldEffects/MinoruTextField.swift; sourceTree = "<group>"; };
-		C6D25A1B24E10783EE77C007032B7EE7 /* KaedeTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KaedeTextField.swift; path = TextFieldEffects/TextFieldEffects/KaedeTextField.swift; sourceTree = "<group>"; };
-		CAC0DDE7C7B1DD3E26716E02076AB460 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
+		B400ACC7A89A801F1C505FEEDB9F2855 /* Pods_Lock_v1UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Lock_v1UITests.framework; path = "Pods-Lock_v1UITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B580C7DADF25704CDC25F027A2051C17 /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
+		B73D7AE8B7295BC2007E02C60B0974E2 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
+		BD58A556FB6F6E395D359DD8136BEAD5 /* TextFieldEffects-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TextFieldEffects-prefix.pch"; sourceTree = "<group>"; };
+		C13227A1827F593FBAB4850424631DF1 /* Navajo-Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Navajo-Swift.xcconfig"; sourceTree = "<group>"; };
+		C9157F3CC7877FB803BBA325108E9A52 /* MadokaTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MadokaTextField.swift; path = TextFieldEffects/TextFieldEffects/MadokaTextField.swift; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CCB6C37B8AEB6BC0719DE202CDD5DCEF /* Pods-Lock_v1Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Lock_v1Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF937561402C4C88B82A2AFDB63962A2 /* Pods-Lock_v1-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Lock_v1-frameworks.sh"; sourceTree = "<group>"; };
+		D1C4FD7FFC2DB6BEB750475DEBB8ABDD /* KaedeTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KaedeTextField.swift; path = TextFieldEffects/TextFieldEffects/KaedeTextField.swift; sourceTree = "<group>"; };
+		D6ED6C5C1557ACE9F7932130C67EC4AA /* TextFieldEffects-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TextFieldEffects-dummy.m"; sourceTree = "<group>"; };
 		D767DC3989C8C4FC2FC03A550E16419E /* Pods-Lock_v1UITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Lock_v1UITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DC9D2199C3D9F309166D41838D3C76DC /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
 		E61E487D362553CEFE0E51487A012B1B /* Pods-Lock_v1UITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Lock_v1UITests-resources.sh"; sourceTree = "<group>"; };
 		EE87524760A1E23B7E897DF619D8DE9B /* Pods-Lock_v1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Lock_v1.debug.xcconfig"; sourceTree = "<group>"; };
 		F1537E29277740EB4893B2E2E6801DB5 /* Pods-Lock_v1UITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Lock_v1UITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		F8883CD7F691EBA5DB33CB55F1555EA6 /* YokoTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YokoTextField.swift; path = TextFieldEffects/TextFieldEffects/YokoTextField.swift; sourceTree = "<group>"; };
-		FB46A461110DBD74B384EB7236087D3B /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
+		F265BFCE2D38EBF3DB1487BFB07CEE54 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F983801C1FECF07B680D09806154AA96 /* TextFieldEffects.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = TextFieldEffects.modulemap; sourceTree = "<group>"; };
+		FCC01E03D2ED6B6119FF322C894C8564 /* TextFieldEffects.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TextFieldEffects.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0DC83D800F0DC987E243B9ACCB5F2047 /* Frameworks */ = {
+		137C900F94B55482B7700D77F01B3746 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81F73D0E683D406FB9314B63DC853837 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1F95E00AA916C25E1E40A88D1CFF1D11 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7A31B7D4C4A85CD71B1DB0C8E8BE69A7 /* Foundation.framework in Frameworks */,
+				A9CDF4B17525C6C1B38974553E03EDE5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +155,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3FB2797909B585DFACBA50E199693129 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A59D28CC17B87700D1E08C9D28DC9A3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		404995DE8D8E540B612DD731549C74F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -148,27 +171,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		772D8BF1974E4EAB5C5FCA06A965459D /* Frameworks */ = {
+		43CB0193BC4AF650BBDB946CF65786CF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7A9CC98F62A2A0784DB640391A137E0 /* Foundation.framework in Frameworks */,
+				94E7F2AEC9830931DACEFFFA7EC4B55B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9363C5CE535375F70109D7F929CED667 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC076950FF65A34B9BC04BCA41917291 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		08EAD05506DE9B7F7EEECFA86977A7DE /* SwiftyJSON */ = {
-			isa = PBXGroup;
-			children = (
-				FB46A461110DBD74B384EB7236087D3B /* SwiftyJSON.swift */,
-				CF797638D629B36A99B8FB4B29EE31B4 /* Support Files */,
-			);
-			name = SwiftyJSON;
-			path = SwiftyJSON;
-			sourceTree = "<group>";
-		};
 		0BFF3C25283EF102E7BBAB5E3D940110 /* Pods-Lock_v1 */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,58 +208,59 @@
 			path = "Target Support Files/Pods-Lock_v1";
 			sourceTree = "<group>";
 		};
-		198C2A862920330ACB82D0D3A3390FA5 /* TextFieldEffects */ = {
+		4F86828B9A4614D6851542851EEBCCDE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				22DA3037B502F3F22BB35AF5007031D1 /* AkiraTextField.swift */,
-				45D9592DC8B5F12668C5C392874F2CCB /* HoshiTextField.swift */,
-				979AD71D0B6650292CB098CF9EB7F0B5 /* IsaoTextField.swift */,
-				3DAD152122F35BC6FA9992D0D5EF7592 /* JiroTextField.swift */,
-				C6D25A1B24E10783EE77C007032B7EE7 /* KaedeTextField.swift */,
-				80FBBB19C6C94A94AFF9E05E80FBB98A /* MadokaTextField.swift */,
-				ADC139650EE5BC09A6938F6EC8A9D344 /* MinoruTextField.swift */,
-				09A4F1B97601328015D3DDC6E9E2A252 /* TextFieldsEffects.swift */,
-				F8883CD7F691EBA5DB33CB55F1555EA6 /* YokoTextField.swift */,
-				0CF050DF8B4F278B191AC059F33A7067 /* YoshikoTextField.swift */,
-				2C737E65500C8770108413771F3C5A04 /* Support Files */,
+				66136CD3BDB701D6425B8C8D5142394A /* Navajo-Swift */,
+				CAFA32C4D9B7265871610DD854CB215D /* SwiftyJSON */,
+				65A08CFA09852BCABC4E14CB2C86C646 /* TextFieldEffects */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		65A08CFA09852BCABC4E14CB2C86C646 /* TextFieldEffects */ = {
+			isa = PBXGroup;
+			children = (
+				7ACF480DB6EE8A104FB1AFC37861D692 /* AkiraTextField.swift */,
+				4F872EED5967369CBFE4A9C498BCA1FD /* HoshiTextField.swift */,
+				92D302CFFE8DBCBC4AE48D156C5F9D4B /* IsaoTextField.swift */,
+				01FA28EC42CA02FBE5F2A2996B711AD5 /* JiroTextField.swift */,
+				D1C4FD7FFC2DB6BEB750475DEBB8ABDD /* KaedeTextField.swift */,
+				C9157F3CC7877FB803BBA325108E9A52 /* MadokaTextField.swift */,
+				9DBA316FA315F2648D39B0A684A4B830 /* MinoruTextField.swift */,
+				41322FB074CB12EBA4813B5487749FF7 /* TextFieldsEffects.swift */,
+				9433109A154F352936F2AF8C7758A2AC /* YokoTextField.swift */,
+				5F1A36D36572AC0838A41508C7BADDF2 /* YoshikoTextField.swift */,
+				706595300266B517CDD6EFAAF1478DC3 /* Support Files */,
 			);
 			name = TextFieldEffects;
 			path = TextFieldEffects;
 			sourceTree = "<group>";
 		};
-		2C737E65500C8770108413771F3C5A04 /* Support Files */ = {
+		66136CD3BDB701D6425B8C8D5142394A /* Navajo-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				7E45E2D99212CA5E14EAEA33A40E760E /* Info.plist */,
-				3E83B8B69B2FCF118526F6B5ADE8BCAC /* TextFieldEffects.modulemap */,
-				74684E62C9C3F43996012F85CF499BC7 /* TextFieldEffects.xcconfig */,
-				70F3E697B72D6380007D791177C43C40 /* TextFieldEffects-dummy.m */,
-				3368956C99DB97C04C31BC62F1738DA3 /* TextFieldEffects-prefix.pch */,
-				6EA78654284407AE8E36CBF785A53B07 /* TextFieldEffects-umbrella.h */,
+				3959D4852127D18EAEC4D2B4D4561C52 /* Navajo.swift */,
+				8650307CE9B3EE52F571C690E8661F81 /* NJOPasswordRule.swift */,
+				1468331DD9BF3EBB864AC6D2E89D8419 /* NJOPasswordValidator.swift */,
+				D26A916CDF79E48C07A625104F2E358C /* Support Files */,
+			);
+			name = "Navajo-Swift";
+			path = "Navajo-Swift";
+			sourceTree = "<group>";
+		};
+		706595300266B517CDD6EFAAF1478DC3 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				525B57964EEEE9C80CBC114F56543394 /* Info.plist */,
+				F983801C1FECF07B680D09806154AA96 /* TextFieldEffects.modulemap */,
+				FCC01E03D2ED6B6119FF322C894C8564 /* TextFieldEffects.xcconfig */,
+				D6ED6C5C1557ACE9F7932130C67EC4AA /* TextFieldEffects-dummy.m */,
+				BD58A556FB6F6E395D359DD8136BEAD5 /* TextFieldEffects-prefix.pch */,
+				35A7614AED701FF78C1F162D4A799F3D /* TextFieldEffects-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/TextFieldEffects";
-			sourceTree = "<group>";
-		};
-		2DE1ECE54D7C9359A50DB67E5E20A64E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				08EAD05506DE9B7F7EEECFA86977A7DE /* SwiftyJSON */,
-				198C2A862920330ACB82D0D3A3390FA5 /* TextFieldEffects */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		461715372D175642F72A3E48A5419F52 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				46021849B18E806A0DCEB2E8A424E867 /* Pods_Lock_v1.framework */,
-				630D8A0B833077C221B39DECE382CCDB /* Pods_Lock_v1Tests.framework */,
-				2C8320ED0E4EAD4D2D6DAE9BECE4863F /* Pods_Lock_v1UITests.framework */,
-				35ED96BC756835AC41A7C8D38BEF3CD4 /* SwiftyJSON.framework */,
-				3DC2D764CF39070B78DF9A2C9011B0CA /* TextFieldEffects.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
@@ -249,13 +271,27 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		7BE160720C2B9B9EAD0EF51E1E6FC41A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4DF8651251DA91A58AE8AD8858F13865 /* Info.plist */,
+				DC9D2199C3D9F309166D41838D3C76DC /* SwiftyJSON.modulemap */,
+				2CBACD1885E642F86A53B48B801E27B3 /* SwiftyJSON.xcconfig */,
+				B73D7AE8B7295BC2007E02C60B0974E2 /* SwiftyJSON-dummy.m */,
+				26494C25678318A9D6D85126644A9BAC /* SwiftyJSON-prefix.pch */,
+				B580C7DADF25704CDC25F027A2051C17 /* SwiftyJSON-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyJSON";
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				2DE1ECE54D7C9359A50DB67E5E20A64E /* Pods */,
-				461715372D175642F72A3E48A5419F52 /* Products */,
+				4F86828B9A4614D6851542851EEBCCDE /* Pods */,
+				A23BE7932C9BABC2C03502D1AEA62C6B /* Products */,
 				8904B447A27B511DA0CFB472EABBAA82 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -268,6 +304,19 @@
 				C2433CD03397FFE997E07610E5C45BB2 /* Pods-Lock_v1UITests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		A23BE7932C9BABC2C03502D1AEA62C6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43AB8AB5CACADCCBA7CEE909C1E0716B /* Navajo_Swift.framework */,
+				4DD6497819D4DC05AC73B5F5CFCDFD41 /* Pods_Lock_v1.framework */,
+				41FC4CDF42227B28ABCA2F19F76793FB /* Pods_Lock_v1Tests.framework */,
+				B400ACC7A89A801F1C505FEEDB9F2855 /* Pods_Lock_v1UITests.framework */,
+				4A6B5E0C8627DE5A29F55042C248431E /* SwiftyJSON.framework */,
+				0F4C6977E21C35492DCC48A72EB799D3 /* TextFieldEffects.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -296,18 +345,28 @@
 			path = "Target Support Files/Pods-Lock_v1UITests";
 			sourceTree = "<group>";
 		};
-		CF797638D629B36A99B8FB4B29EE31B4 /* Support Files */ = {
+		CAFA32C4D9B7265871610DD854CB215D /* SwiftyJSON */ = {
 			isa = PBXGroup;
 			children = (
-				91840967030246527CF66E1BA4854882 /* Info.plist */,
-				07F166B831C64DD9B941C8C6D24D33A1 /* SwiftyJSON.modulemap */,
-				7370B7B017F9C5C585D472C56D6F25B0 /* SwiftyJSON.xcconfig */,
-				CAC0DDE7C7B1DD3E26716E02076AB460 /* SwiftyJSON-dummy.m */,
-				962D67810028C5BCC324AE13204C292B /* SwiftyJSON-prefix.pch */,
-				A244D6B0303DD0EEC22D99D49E364805 /* SwiftyJSON-umbrella.h */,
+				A8C179B133FE59B840A93D209A73C446 /* SwiftyJSON.swift */,
+				7BE160720C2B9B9EAD0EF51E1E6FC41A /* Support Files */,
+			);
+			name = SwiftyJSON;
+			path = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		D26A916CDF79E48C07A625104F2E358C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F265BFCE2D38EBF3DB1487BFB07CEE54 /* Info.plist */,
+				2B0CDEAF7993685B73F5012778A56490 /* Navajo-Swift.modulemap */,
+				C13227A1827F593FBAB4850424631DF1 /* Navajo-Swift.xcconfig */,
+				828FBFAA746096A671F5328802E50330 /* Navajo-Swift-dummy.m */,
+				81F79C02C0B5E0F21505EB1BFA46936C /* Navajo-Swift-prefix.pch */,
+				18AAC8898C89E22BCE7CCE4A5EEDDDEA /* Navajo-Swift-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/SwiftyJSON";
+			path = "../Target Support Files/Navajo-Swift";
 			sourceTree = "<group>";
 		};
 		E91C48A3C904DB4DBDCB846CE0B16DB0 /* Pods-Lock_v1Tests */ = {
@@ -331,19 +390,35 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		32DE0E2AF594E10FAB861EC3E5ECFDF1 /* Headers */ = {
+		67BF3FB22859FE809F6F7B41516541CE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA8628DBF14934F65CBA2DFEBF487BD8 /* Pods-Lock_v1-umbrella.h in Headers */,
+				BE6D0151959F59A8CC8189FB2123BAA3 /* Navajo-Swift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6B0F828EB73333ED8DE56EBD86E2F0FB /* Headers */ = {
+		6C314057B19806C30DD4AC792DA9F589 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A97E3D738C3CC401F2A45CEB4BBAC1D9 /* SwiftyJSON-umbrella.h in Headers */,
+				0D03C50E1E0E1AF468822F9C56215AA5 /* TextFieldEffects-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A36E7945DC4E635D509EBC3EE612DBB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				346D135DA187453582BC31D494DB6DC0 /* Pods-Lock_v1-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB90E327223B1DDFB1AFDAD1B91A6BC7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EEA64CCC5E3B9F62708816D910B59B2 /* SwiftyJSON-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,14 +427,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBB6E3CB043C18D7E700F4E877F424CF /* Pods-Lock_v1UITests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC0EB379B87982F9B1690458ABC1A629 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				33482C746AA2CBBECB65B4DD6631A81D /* TextFieldEffects-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +441,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		015AAC4618F33550E8C400890E3DCF90 /* Navajo-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F522CC7D61EDD7136510AACB5258B43A /* Build configuration list for PBXNativeTarget "Navajo-Swift" */;
+			buildPhases = (
+				F608CE111AFD18E64CEE5ECEFFD9459C /* Sources */,
+				137C900F94B55482B7700D77F01B3746 /* Frameworks */,
+				67BF3FB22859FE809F6F7B41516541CE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Navajo-Swift";
+			productName = "Navajo-Swift";
+			productReference = 43AB8AB5CACADCCBA7CEE909C1E0716B /* Navajo_Swift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		08882CAC4D3B26D7E2197A2F5E2C531F /* Pods-Lock_v1UITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A1A56F983A3EEDFECA1ABC7F17DBC785 /* Build configuration list for PBXNativeTarget "Pods-Lock_v1UITests" */;
@@ -388,24 +472,24 @@
 			);
 			name = "Pods-Lock_v1UITests";
 			productName = "Pods-Lock_v1UITests";
-			productReference = 2C8320ED0E4EAD4D2D6DAE9BECE4863F /* Pods_Lock_v1UITests.framework */;
+			productReference = B400ACC7A89A801F1C505FEEDB9F2855 /* Pods_Lock_v1UITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		46F94CAF482A73248C088D7D419250F4 /* TextFieldEffects */ = {
+		6769774FB844688204ED6A149C3B6724 /* SwiftyJSON */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E82C48E84B0819D11038B1F3F19BBBE8 /* Build configuration list for PBXNativeTarget "TextFieldEffects" */;
+			buildConfigurationList = 200787FD78914EB9D00A1DC3F43C44B9 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */;
 			buildPhases = (
-				D187A50B0F29B99D12F0A1F516C0568B /* Sources */,
-				772D8BF1974E4EAB5C5FCA06A965459D /* Frameworks */,
-				DC0EB379B87982F9B1690458ABC1A629 /* Headers */,
+				2AFE12D02F3D52609A051114D577D6CA /* Sources */,
+				43CB0193BC4AF650BBDB946CF65786CF /* Frameworks */,
+				CB90E327223B1DDFB1AFDAD1B91A6BC7 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = TextFieldEffects;
-			productName = TextFieldEffects;
-			productReference = 3DC2D764CF39070B78DF9A2C9011B0CA /* TextFieldEffects.framework */;
+			name = SwiftyJSON;
+			productName = SwiftyJSON;
+			productReference = 4A6B5E0C8627DE5A29F55042C248431E /* SwiftyJSON.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		86C9BC777DF006B89DDB84E318109150 /* Pods-Lock_v1Tests */ = {
@@ -422,43 +506,44 @@
 			);
 			name = "Pods-Lock_v1Tests";
 			productName = "Pods-Lock_v1Tests";
-			productReference = 630D8A0B833077C221B39DECE382CCDB /* Pods_Lock_v1Tests.framework */;
+			productReference = 41FC4CDF42227B28ABCA2F19F76793FB /* Pods_Lock_v1Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		A269990C708D9D8CDD03DACE9DFD2293 /* SwiftyJSON */ = {
+		9560D58097B10285BE63A2E9F110AF8F /* TextFieldEffects */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 265DDEC51F93C599D24E53ECC40AF255 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */;
+			buildConfigurationList = D7A17B3C15D3F10F634943622E063445 /* Build configuration list for PBXNativeTarget "TextFieldEffects" */;
 			buildPhases = (
-				DF2064D960C071109AB7472D8155E2FA /* Sources */,
-				1F95E00AA916C25E1E40A88D1CFF1D11 /* Frameworks */,
-				6B0F828EB73333ED8DE56EBD86E2F0FB /* Headers */,
+				C363A517842F7CDAB028652914764F0B /* Sources */,
+				9363C5CE535375F70109D7F929CED667 /* Frameworks */,
+				6C314057B19806C30DD4AC792DA9F589 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SwiftyJSON;
-			productName = SwiftyJSON;
-			productReference = 35ED96BC756835AC41A7C8D38BEF3CD4 /* SwiftyJSON.framework */;
+			name = TextFieldEffects;
+			productName = TextFieldEffects;
+			productReference = 0F4C6977E21C35492DCC48A72EB799D3 /* TextFieldEffects.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CE5780BD0A3853422947AD496929872D /* Pods-Lock_v1 */ = {
+		B7E2483BE686463868C47DA0944EE2C4 /* Pods-Lock_v1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DC954597FECC110DDA2197495CA2C8A9 /* Build configuration list for PBXNativeTarget "Pods-Lock_v1" */;
+			buildConfigurationList = 4EF028D65D882939AD2B151F66DA516D /* Build configuration list for PBXNativeTarget "Pods-Lock_v1" */;
 			buildPhases = (
-				D34CD412D28875B8F2C3C5E1EC52C802 /* Sources */,
-				0DC83D800F0DC987E243B9ACCB5F2047 /* Frameworks */,
-				32DE0E2AF594E10FAB861EC3E5ECFDF1 /* Headers */,
+				69C26881BFF5AD803A947C52AC3ED909 /* Sources */,
+				3FB2797909B585DFACBA50E199693129 /* Frameworks */,
+				7A36E7945DC4E635D509EBC3EE612DBB /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CB3F486F0BD3A685C8776574254077B0 /* PBXTargetDependency */,
-				981DAF74FE98C7B18B3F396DA97FB8B0 /* PBXTargetDependency */,
+				49F8203E1F5E5B3F734174CB7970812A /* PBXTargetDependency */,
+				4A0CF5C8ED308F509FA6F8804C72F1F9 /* PBXTargetDependency */,
+				5E2861BFC4316223F9BA97C276A5A2D8 /* PBXTargetDependency */,
 			);
 			name = "Pods-Lock_v1";
 			productName = "Pods-Lock_v1";
-			productReference = 46021849B18E806A0DCEB2E8A424E867 /* Pods_Lock_v1.framework */;
+			productReference = 4DD6497819D4DC05AC73B5F5CFCDFD41 /* Pods_Lock_v1.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -478,20 +563,38 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 461715372D175642F72A3E48A5419F52 /* Products */;
+			productRefGroup = A23BE7932C9BABC2C03502D1AEA62C6B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CE5780BD0A3853422947AD496929872D /* Pods-Lock_v1 */,
+				015AAC4618F33550E8C400890E3DCF90 /* Navajo-Swift */,
+				B7E2483BE686463868C47DA0944EE2C4 /* Pods-Lock_v1 */,
 				86C9BC777DF006B89DDB84E318109150 /* Pods-Lock_v1Tests */,
 				08882CAC4D3B26D7E2197A2F5E2C531F /* Pods-Lock_v1UITests */,
-				A269990C708D9D8CDD03DACE9DFD2293 /* SwiftyJSON */,
-				46F94CAF482A73248C088D7D419250F4 /* TextFieldEffects */,
+				6769774FB844688204ED6A149C3B6724 /* SwiftyJSON */,
+				9560D58097B10285BE63A2E9F110AF8F /* TextFieldEffects */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2AFE12D02F3D52609A051114D577D6CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4FB62994D4B9FB0636149E9A23EAE6F /* SwiftyJSON-dummy.m in Sources */,
+				0B061AAFBF2222B42B9CC5340C4709EE /* SwiftyJSON.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69C26881BFF5AD803A947C52AC3ED909 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				999948D1EC4620E4B26215AA8B48897E /* Pods-Lock_v1-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DDCD380D1071EF1814EB9D18E177C3C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -508,62 +611,62 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D187A50B0F29B99D12F0A1F516C0568B /* Sources */ = {
+		C363A517842F7CDAB028652914764F0B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBBF4B7D636E768A4FCC969D83A607AA /* AkiraTextField.swift in Sources */,
-				A4AF6D4D696642DD55490A589B619806 /* HoshiTextField.swift in Sources */,
-				258926628564E3876E4A0BEB494EED17 /* IsaoTextField.swift in Sources */,
-				7FF5657E8FE0481C586F5624DDA275C9 /* JiroTextField.swift in Sources */,
-				7456BFD00F2C20456DC8DB938F2381CF /* KaedeTextField.swift in Sources */,
-				A4FBAAD06BE05ECF4226C4E50C0A715A /* MadokaTextField.swift in Sources */,
-				0A6A0F94484527942AC3A0D0BA749F01 /* MinoruTextField.swift in Sources */,
-				D14EF25BBCBB062A9C584C915C81F440 /* TextFieldEffects-dummy.m in Sources */,
-				62677658CB5DBB5EA89E6C436851E655 /* TextFieldsEffects.swift in Sources */,
-				02AABCCBA7E99CDA5156168E0E762673 /* YokoTextField.swift in Sources */,
-				8D83FCBD5ACCFCD746A48644D62B45CD /* YoshikoTextField.swift in Sources */,
+				B6F4FC16D0F520F8D71C8300B22DE84E /* AkiraTextField.swift in Sources */,
+				B89D1EDD8512643E0DB2A80DAA9D091F /* HoshiTextField.swift in Sources */,
+				0299D4FD7CDA1BDCD485CFBAD7FCB5A4 /* IsaoTextField.swift in Sources */,
+				A25E02870E131E27AF0838F87DE29459 /* JiroTextField.swift in Sources */,
+				0363F05279C8838E211A639AFA6F84B1 /* KaedeTextField.swift in Sources */,
+				ADDDF23B106AD3DF76F90FF73E6DCA3F /* MadokaTextField.swift in Sources */,
+				CD09D25AAE4F363AE1103270D40DE860 /* MinoruTextField.swift in Sources */,
+				0317252A4A6C558FC9B967AB0BA5137D /* TextFieldEffects-dummy.m in Sources */,
+				41BBE279C654B94D2B02EA336480116C /* TextFieldsEffects.swift in Sources */,
+				2184E630FEDAF7789D30776A7870ECD2 /* YokoTextField.swift in Sources */,
+				5F61E4FF0E811C53082EB408303115B7 /* YoshikoTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D34CD412D28875B8F2C3C5E1EC52C802 /* Sources */ = {
+		F608CE111AFD18E64CEE5ECEFFD9459C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC2823AA5F662D5D5601F1AC7B47DF39 /* Pods-Lock_v1-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DF2064D960C071109AB7472D8155E2FA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				227D828FAD021B551679D72336E345FD /* SwiftyJSON-dummy.m in Sources */,
-				42937FC490FAD224EE499E86F6E17C4A /* SwiftyJSON.swift in Sources */,
+				4261198CE34204F079AAC57D3541942D /* Navajo-Swift-dummy.m in Sources */,
+				183BB05D9B228104F232F31C63417CBB /* Navajo.swift in Sources */,
+				FBC65D26ACBA0B5A89C83DE8D0662692 /* NJOPasswordRule.swift in Sources */,
+				409E19A43CB26144ED3015A2F4604AF0 /* NJOPasswordValidator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		981DAF74FE98C7B18B3F396DA97FB8B0 /* PBXTargetDependency */ = {
+		49F8203E1F5E5B3F734174CB7970812A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = TextFieldEffects;
-			target = 46F94CAF482A73248C088D7D419250F4 /* TextFieldEffects */;
-			targetProxy = FD1884B7CBCC159542414DF6889393B8 /* PBXContainerItemProxy */;
+			name = "Navajo-Swift";
+			target = 015AAC4618F33550E8C400890E3DCF90 /* Navajo-Swift */;
+			targetProxy = EF8DF813AC72369E3E6033DC20766DD8 /* PBXContainerItemProxy */;
 		};
-		CB3F486F0BD3A685C8776574254077B0 /* PBXTargetDependency */ = {
+		4A0CF5C8ED308F509FA6F8804C72F1F9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftyJSON;
-			target = A269990C708D9D8CDD03DACE9DFD2293 /* SwiftyJSON */;
-			targetProxy = 781BF2BA7F5409F6A2C9827157582D55 /* PBXContainerItemProxy */;
+			target = 6769774FB844688204ED6A149C3B6724 /* SwiftyJSON */;
+			targetProxy = B32AC8B2245068830AFCE0B582150F21 /* PBXContainerItemProxy */;
+		};
+		5E2861BFC4316223F9BA97C276A5A2D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TextFieldEffects;
+			target = 9560D58097B10285BE63A2E9F110AF8F /* TextFieldEffects */;
+			targetProxy = BAA2487D9A95D3DFB58BC4421AE4CAA4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		264BBF272A86A2FCEEEC2DC5875A765B /* Release */ = {
+		2C7179DFB88E4D62C62E959FB871BB9D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3BD275C717A8215F8AA5F72DB3FB36B6 /* Pods-Lock_v1.release.xcconfig */;
+			baseConfigurationReference = C13227A1827F593FBAB4850424631DF1 /* Navajo-Swift.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -576,29 +679,59 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Lock_v1/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Navajo-Swift/Navajo-Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Navajo-Swift/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Lock_v1/Pods-Lock_v1.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Navajo-Swift/Navajo-Swift.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Lock_v1;
+				PRODUCT_NAME = Navajo_Swift;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		2B822C31FD90404992624C703E240090 /* Release */ = {
+		40AF9D3D8872BD8772A624810604DC48 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7370B7B017F9C5C585D472C56D6F25B0 /* SwiftyJSON.xcconfig */;
+			baseConfigurationReference = C13227A1827F593FBAB4850424631DF1 /* Navajo-Swift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Navajo-Swift/Navajo-Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Navajo-Swift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Navajo-Swift/Navajo-Swift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Navajo_Swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4A5449B818E21AB3789CB66DF188917B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CBACD1885E642F86A53B48B801E27B3 /* SwiftyJSON.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -627,39 +760,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		566D00C003D3D0EFDAB3878ACF868D85 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 74684E62C9C3F43996012F85CF499BC7 /* TextFieldEffects.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TextFieldEffects/TextFieldEffects-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TextFieldEffects/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TextFieldEffects/TextFieldEffects.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = TextFieldEffects;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		673254EEAF0B5BF4596080C749645884 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -701,9 +801,44 @@
 			};
 			name = Release;
 		};
-		6AA3B2CE4375F6B0E026AA123CEDB8A5 /* Release */ = {
+		6D6A6102792CE3A473E37C0B8E8CD121 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 74684E62C9C3F43996012F85CF499BC7 /* TextFieldEffects.xcconfig */;
+			baseConfigurationReference = 3BD275C717A8215F8AA5F72DB3FB36B6 /* Pods-Lock_v1.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Lock_v1/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Lock_v1/Pods-Lock_v1.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Lock_v1;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8784FC6547B40FA484123C74A6967784 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCC01E03D2ED6B6119FF322C894C8564 /* TextFieldEffects.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -768,9 +903,9 @@
 			};
 			name = Release;
 		};
-		AE89350AAA92257D8D0932AA86C3B5B5 /* Debug */ = {
+		9ACFF60FAA40C31B97F5F334BD13DA0E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7370B7B017F9C5C585D472C56D6F25B0 /* SwiftyJSON.xcconfig */;
+			baseConfigurationReference = 2CBACD1885E642F86A53B48B801E27B3 /* SwiftyJSON.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -836,7 +971,40 @@
 			};
 			name = Debug;
 		};
-		C04D158B00BBB564D448558AE41DA0A2 /* Debug */ = {
+		B95854739DC639A5359799C29B048C45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCC01E03D2ED6B6119FF322C894C8564 /* TextFieldEffects.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TextFieldEffects/TextFieldEffects-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TextFieldEffects/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TextFieldEffects/TextFieldEffects.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = TextFieldEffects;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C1BB28C123E76A8B24A8697376BCED5F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EE87524760A1E23B7E897DF619D8DE9B /* Pods-Lock_v1.debug.xcconfig */;
 			buildSettings = {
@@ -989,11 +1157,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		265DDEC51F93C599D24E53ECC40AF255 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
+		200787FD78914EB9D00A1DC3F43C44B9 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AE89350AAA92257D8D0932AA86C3B5B5 /* Debug */,
-				2B822C31FD90404992624C703E240090 /* Release */,
+				9ACFF60FAA40C31B97F5F334BD13DA0E /* Debug */,
+				4A5449B818E21AB3789CB66DF188917B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1003,6 +1171,15 @@
 			buildConfigurations = (
 				E4F26E6EB105713A6A7E7E2E283AC2DF /* Debug */,
 				673254EEAF0B5BF4596080C749645884 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EF028D65D882939AD2B151F66DA516D /* Build configuration list for PBXNativeTarget "Pods-Lock_v1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1BB28C123E76A8B24A8697376BCED5F /* Debug */,
+				6D6A6102792CE3A473E37C0B8E8CD121 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1025,20 +1202,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DC954597FECC110DDA2197495CA2C8A9 /* Build configuration list for PBXNativeTarget "Pods-Lock_v1" */ = {
+		D7A17B3C15D3F10F634943622E063445 /* Build configuration list for PBXNativeTarget "TextFieldEffects" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C04D158B00BBB564D448558AE41DA0A2 /* Debug */,
-				264BBF272A86A2FCEEEC2DC5875A765B /* Release */,
+				B95854739DC639A5359799C29B048C45 /* Debug */,
+				8784FC6547B40FA484123C74A6967784 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E82C48E84B0819D11038B1F3F19BBBE8 /* Build configuration list for PBXNativeTarget "TextFieldEffects" */ = {
+		F522CC7D61EDD7136510AACB5258B43A /* Build configuration list for PBXNativeTarget "Navajo-Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				566D00C003D3D0EFDAB3878ACF868D85 /* Debug */,
-				6AA3B2CE4375F6B0E026AA123CEDB8A5 /* Release */,
+				40AF9D3D8872BD8772A624810604DC48 /* Debug */,
+				2C7179DFB88E4D62C62E959FB871BB9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
