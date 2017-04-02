@@ -15,13 +15,14 @@
 		561C18E21E01ED76006172E5 /* Lock_v1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C18E11E01ED76006172E5 /* Lock_v1Tests.swift */; };
 		561C18ED1E01ED76006172E5 /* Lock_v1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C18EC1E01ED76006172E5 /* Lock_v1UITests.swift */; };
 		564CFA4E1E43880F00648C43 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564CFA4D1E43880F00648C43 /* LocalAuthentication.framework */; };
-		565E13A01E43583500D8C840 /* LogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E139F1E43583500D8C840 /* LogsViewController.swift */; };
+		565231791E9126D3009A13C3 /* updatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565231781E9126D3009A13C3 /* updatePasswordViewController.swift */; };
 		565E13A31E437EF900D8C840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565E13A11E437EF900D8C840 /* Main.storyboard */; };
 		5661892C1E55CCAD00203DAA /* ScanQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5661892B1E55CCAD00203DAA /* ScanQRViewController.swift */; };
 		5671E1961E3792900031AD69 /* AdminToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5671E1951E3792900031AD69 /* AdminToolsViewController.swift */; };
 		5671E1981E37C5DD0031AD69 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5671E1971E37C5DD0031AD69 /* SetupViewController.swift */; };
 		56AB66AE1E351A3700ADF4C1 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AB66AD1E351A3700ADF4C1 /* RegisterPageViewController.swift */; };
 		56AB66B01E351D9900ADF4C1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AB66AF1E351D9900ADF4C1 /* LoginViewController.swift */; };
+		56D166741E8D5C1200B567A6 /* LogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D166731E8D5C1200B567A6 /* LogsViewController.swift */; };
 		B02E82310BF50D969D1E5667 /* Pods_Lock_v1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D36824FFA0D4952BFF375CD /* Pods_Lock_v1Tests.framework */; };
 		B6A0C16F41F6DCB30A761B48 /* Pods_Lock_v1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65BECB7ADA23E8BBDD48221 /* Pods_Lock_v1.framework */; };
 /* End PBXBuildFile section */
@@ -62,13 +63,14 @@
 		561C18EE1E01ED76006172E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		564CFA4D1E43880F00648C43 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		564CFA4F1E438AA800648C43 /* Lock_v1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lock_v1-Bridging-Header.h"; sourceTree = "<group>"; };
-		565E139F1E43583500D8C840 /* LogsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogsViewController.swift; path = ../LogsViewController.swift; sourceTree = "<group>"; };
+		565231781E9126D3009A13C3 /* updatePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = updatePasswordViewController.swift; sourceTree = "<group>"; };
 		565E13A21E437EF900D8C840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5661892B1E55CCAD00203DAA /* ScanQRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanQRViewController.swift; sourceTree = "<group>"; };
 		5671E1951E3792900031AD69 /* AdminToolsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminToolsViewController.swift; sourceTree = "<group>"; };
 		5671E1971E37C5DD0031AD69 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		56AB66AD1E351A3700ADF4C1 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 		56AB66AF1E351D9900ADF4C1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		56D166731E8D5C1200B567A6 /* LogsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogsViewController.swift; sourceTree = "<group>"; };
 		69FADA9D271ABABC629E4E9E /* Pods-Lock_v1Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lock_v1Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lock_v1Tests/Pods-Lock_v1Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6DD1E9D7C7DB71AB326F277B /* Pods-Lock_v1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lock_v1Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lock_v1Tests/Pods-Lock_v1Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9D36824FFA0D4952BFF375CD /* Pods_Lock_v1Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lock_v1Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,13 +144,14 @@
 			isa = PBXGroup;
 			children = (
 				565E13A11E437EF900D8C840 /* Main.storyboard */,
+				565231781E9126D3009A13C3 /* updatePasswordViewController.swift */,
 				5661892B1E55CCAD00203DAA /* ScanQRViewController.swift */,
 				561C18CC1E01ED76006172E5 /* AppDelegate.swift */,
 				561C18D31E01ED76006172E5 /* Assets.xcassets */,
 				561C18D51E01ED76006172E5 /* LaunchScreen.storyboard */,
 				561C18D81E01ED76006172E5 /* Info.plist */,
 				561C18CE1E01ED76006172E5 /* ViewController.swift */,
-				565E139F1E43583500D8C840 /* LogsViewController.swift */,
+				56D166731E8D5C1200B567A6 /* LogsViewController.swift */,
 				5671E1971E37C5DD0031AD69 /* SetupViewController.swift */,
 				5671E1951E3792900031AD69 /* AdminToolsViewController.swift */,
 				56AB66AD1E351A3700ADF4C1 /* RegisterPageViewController.swift */,
@@ -474,12 +477,13 @@
 			files = (
 				56AB66B01E351D9900ADF4C1 /* LoginViewController.swift in Sources */,
 				561C18CF1E01ED76006172E5 /* ViewController.swift in Sources */,
+				56D166741E8D5C1200B567A6 /* LogsViewController.swift in Sources */,
 				561C18CD1E01ED76006172E5 /* AppDelegate.swift in Sources */,
 				5671E1961E3792900031AD69 /* AdminToolsViewController.swift in Sources */,
 				5661892C1E55CCAD00203DAA /* ScanQRViewController.swift in Sources */,
-				565E13A01E43583500D8C840 /* LogsViewController.swift in Sources */,
 				5671E1981E37C5DD0031AD69 /* SetupViewController.swift in Sources */,
 				56AB66AE1E351A3700ADF4C1 /* RegisterPageViewController.swift in Sources */,
+				565231791E9126D3009A13C3 /* updatePasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
