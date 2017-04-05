@@ -12,7 +12,11 @@ import UIKit
 import SwiftyJSON
 
 
+
 extension UIViewController {
+    /**
+     Hides the keyboard when anywhere in the view controller is clicked
+     */
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -46,7 +50,9 @@ class ViewController: UIViewController {
     
     func tokenCheck()
     {
-    DispatchQueue.main.asyncAfter(deadline: .now() + 180) {      //check after 180 seconds
+        if ((self.isViewLoaded) && (self.view.window != nil)) {
+            // viewController is visible
+    DispatchQueue.main.asyncAfter(deadline: .now() + 120) {      //check after 180 seconds
         var e = "noemail"
         var t = "notoken"
         
@@ -91,18 +97,14 @@ class ViewController: UIViewController {
                 else if resString["success"].stringValue == "false"
                 {
                     print(resString["message"].stringValue)
-                    //logout
-                   // UserDefaults.standard.set(false ,forKey: "isUserLoggedIn");
-                  // self.performSegue(withIdentifier: "LoginView", sender: self)
-                //    self.displayMyAlertMessage("You have been logged off for your sequrity")
-                   self.logout()
+                      self.displayMyAlertMessageLoginView("You have been logged off due to security settings")
                 
                 }
             }
         })
         
         task.resume()
- 
+    }
     }
     }
 
@@ -123,11 +125,9 @@ class ViewController: UIViewController {
          {
             self.performSegue(withIdentifier: "Setup", sender: self)
         }
-           //print(doesUserHaveLock)
-       // if (isUserLoggedIn == true)
-        //{
+        
          tokenCheck()
-        //}
+      
       }
    
     
@@ -258,9 +258,6 @@ class ViewController: UIViewController {
         task.resume()
         
         
-        //make this work for the activity spinner in top bar
-        //UIApplication.shared.isNetworkActivityIndicatorVisible = true;
-        
     }
     
     func logout(){
@@ -270,7 +267,6 @@ class ViewController: UIViewController {
         UserDefaults.standard.synchronize();
         
         self.performSegue(withIdentifier: "LoginView", sender: self);
-        
         //remove/destroy token
         if Bundle.main.bundleIdentifier != nil {
             UserDefaults.standard.removePersistentDomain(forName: "token")
@@ -294,6 +290,23 @@ class ViewController: UIViewController {
         self.present(myAlert, animated:true, completion:nil);
         
     }
+   
+    func displayMyAlertMessageLoginView(_ userMessage:String)
+    {
+        
+        let myAlert = UIAlertController(title:"Message", message:userMessage, preferredStyle: UIAlertControllerStyle.alert);
+        
+       
+        
+        let okAction = UIAlertAction(title:"Ok", style:UIAlertActionStyle.default, handler:  { action in self.performSegue(withIdentifier: "LoginView", sender: self) })
+        
+        
+        myAlert.addAction(okAction);
+        
+        self.present(myAlert, animated:true, completion:nil);
+        
+    }
+    
     
     @IBOutlet weak var activityForLOck: UIActivityIndicatorView!
 

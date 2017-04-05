@@ -8,6 +8,7 @@
 //
 
 import XCTest
+import TextFieldEffects
 
 class Lock_v1UITests: XCTestCase {
         
@@ -35,19 +36,39 @@ class Lock_v1UITests: XCTestCase {
         
     }
     
-    func testLogin()
+    func lockNunlock()
     {
-
+        //lock and unlock successfull!
+        let app = XCUIApplication()
+        app.buttons["Unlock"].tap()
+        
+        let okButton = app.alerts["Alert"].buttons["Ok"]
+        okButton.tap()
+        app.buttons["Lock"].tap()
+        okButton.tap()
+        app.buttons["Logout"].tap()
+        app.alerts["Message"].buttons["Ok"].tap()
         
     }
     
-    func testInandOut()
+    func inNout()
     {
+        
+        let app = XCUIApplication()
+        app.buttons["See in-and-out"].tap()
+        
+        let tablesQuery2 = app.tables
+        let tablesQuery = tablesQuery2
+        tablesQuery.staticTexts["John@example.com UNLOCK At: April 1, 2017 5:14 PM "].tap()
+        
+        let nv94HotmailCoUkUnlockAtApril420171113AmStaticText = tablesQuery2.cells.containing(.staticText, identifier:"nv94@hotmail.co.uk UNLOCK At: April 4, 2017 11:13 AM ").children(matching: .staticText).matching(identifier: "nv94@hotmail.co.uk UNLOCK At: April 4, 2017 11:13 AM ").element(boundBy: 0)
+        nv94HotmailCoUkUnlockAtApril420171113AmStaticText.tap()
+        nv94HotmailCoUkUnlockAtApril420171113AmStaticText.tap()
+        tablesQuery.staticTexts["nv94@hotmail.co.uk UNLOCK At: April 3, 2017 4:35 PM "].swipeDown()
+        tablesQuery.staticTexts["nv94@hotmail.co.uk UNLOCK At: April 1, 2017 5:49 PM "].tap()
+        nv94HotmailCoUkUnlockAtApril420171113AmStaticText.swipeLeft()
+        app.buttons["Back"].tap()
         
     }
     
-    func testRegister()
-    {
-        
-    }
 }

@@ -48,6 +48,7 @@
 		28E6CDCDFC09E2EB536BF1F2 /* Pods_Lock_v1UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lock_v1UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD6F65FACAA0021065E65B1 /* Pods-Lock_v1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lock_v1.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lock_v1/Pods-Lock_v1.release.xcconfig"; sourceTree = "<group>"; };
 		3EB13707D712DD1BDC1B1CC0 /* Pods-Lock_v1UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lock_v1UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lock_v1UITests/Pods-Lock_v1UITests.release.xcconfig"; sourceTree = "<group>"; };
+		4909E791B32DA452FDAA446F /* Pods-Lock_v1UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lock_v1UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lock_v1UITests/Pods-Lock_v1UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		51B68BD5C2C6D9222187BD15 /* Pods-Lock_v1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lock_v1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lock_v1/Pods-Lock_v1.debug.xcconfig"; sourceTree = "<group>"; };
 		561C18C91E01ED76006172E5 /* Lock_v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lock_v1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		561C18CC1E01ED76006172E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -186,6 +187,7 @@
 				69FADA9D271ABABC629E4E9E /* Pods-Lock_v1Tests.debug.xcconfig */,
 				6DD1E9D7C7DB71AB326F277B /* Pods-Lock_v1Tests.release.xcconfig */,
 				3EB13707D712DD1BDC1B1CC0 /* Pods-Lock_v1UITests.release.xcconfig */,
+				4909E791B32DA452FDAA446F /* Pods-Lock_v1UITests.debug.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -698,6 +700,7 @@
 		};
 		561C18F81E01ED76006172E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4909E791B32DA452FDAA446F /* Pods-Lock_v1UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = Lock_v1UITests/Info.plist;
