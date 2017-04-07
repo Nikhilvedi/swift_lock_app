@@ -18,7 +18,7 @@ class LogsViewController: UIViewController, UITableViewDelegate, UITableViewData
         let lockTime : String
         let type : String
     }
-    // cell reuse id (cells that scroll out of view can be reused)
+    /// cell reuse id (cells that scroll out of view can be reused)
     let cellReuseIdentifier = "cell"
     
     var items = [Item]()
@@ -27,18 +27,17 @@ class LogsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Register the table view cell class and its reuse id
+        /// Register the table view cell class and its reuse id
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         
         tableView.delegate = self
         tableView.dataSource = self
         
-        // Do any additional setup after loading the view.
+        /// Do any additional setup after loading the view.
         let lockid = UserDefaults.standard.value(forKey: "LockID")!
-        //   let email = UserDefaults.standard.value(forKey: "email")!
         
         
-        //get the data from the server for that specific lock id
+        ///get the data from the server for that specific lock id
         
         let u = UserDefaults.standard.value(forKey: "userIP")!
         var request = URLRequest(url: URL(string: "http://\(u):3000/logs")!)
@@ -88,7 +87,7 @@ class LogsViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayCount
     }
-    // create a cell for each table view row
+    /// create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell!
@@ -113,7 +112,9 @@ class LogsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     
-    
+    /**
+     Display a message via an alert box
+     */
     func displayMyAlertMessage(_ userMessage:String)
     {
         
@@ -139,6 +140,9 @@ class LogsViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Dispose of any resources that can be recreated.
     }
     
+    /**
+     Handle the back button
+     */
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
         

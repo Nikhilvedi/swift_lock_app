@@ -16,9 +16,11 @@ class updatePasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        /// Do any additional setup after loading the view.
     }
-
+    /**
+     Manage the password strength checking using Navajo
+     */
     @IBAction func passwordChanged(_ sender: Any) {
         let password1 = self.password1.text
         let strength = Navajo.strength(of: password1!)
@@ -30,10 +32,13 @@ class updatePasswordViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //referencing outlets
+    ///referencing outlets
     @IBOutlet weak var password1: HoshiTextField!
     @IBOutlet weak var email: HoshiTextField!
     
+    /**
+     Back button handling
+     */
     @IBAction func back(_ sender: Any) {
         
         self.dismiss(animated: true, completion: nil)
@@ -43,6 +48,9 @@ class updatePasswordViewController: UIViewController {
     @IBOutlet weak var strengthLabel: UILabel!
     @IBOutlet weak var password2: HoshiTextField!
     
+    /**
+     Submit button, calling change password method after checking they're the same
+     */
     @IBAction func submit(_ sender: Any) {
         
         let password1 = self.password1.text
@@ -60,6 +68,9 @@ class updatePasswordViewController: UIViewController {
         
     }
     
+    /**
+     Handle the change password POST method
+     */
     func changePassword()
     {
          let email = self.email.text
@@ -67,7 +78,6 @@ class updatePasswordViewController: UIViewController {
         
         if (UserDefaults.standard.value(forKey: "userIP") == nil)
         {
-            //make this a print out and stop the program crashing by assigning user defaults a value for IP
             UserDefaults.standard.set("localhost", forKey: "userIP")
             
             print("Local host programatically set");
@@ -98,16 +108,15 @@ class updatePasswordViewController: UIViewController {
                 
                 if resString["success"].stringValue == "true"
                 {
+                      ///close the  registration page and prompt for login if successful response from server
                     DispatchQueue.main.async() {
                          self.displayMyAlertMessage(resString["message"].stringValue)
-                        //close the  registration page and prompt for login if successful response from server
-                        
+                      
                     }
-                  //  self.dismiss(animated: true, completion: nil)
                 }
                 else if resString["success"].stringValue == "false"
                 {
-                    //error handling for already signed up users
+                    ///error handling for already signed up users
                     DispatchQueue.main.async() {
                         self.displayMyAlertMessage(resString["message"].stringValue)
                     }
@@ -117,12 +126,15 @@ class updatePasswordViewController: UIViewController {
         }
         task.resume()
         
+        ///set the text boxes to empty when complete 
         self.password1.text = ""
         self.password2.text = ""
         self.email.text = ""
         
     }
-    
+    /**
+    Display a message with a messagebox
+     */
     func displayMyAlertMessage(_ userMessage:String)
     {
         

@@ -36,6 +36,9 @@ class RegisterPageViewController: UIViewController {
     @IBOutlet weak var LockID: UITextField!
     
     
+    /**
+     Handle the register button command and check if the fields are populuated
+     */
     @IBAction func registerButton(_ sender: Any) {
         
         let userName = name.text
@@ -43,38 +46,31 @@ class RegisterPageViewController: UIViewController {
         let userPassword = password.text
         let userPasswordConfirm = password2.text
         
-        //validation before sending to server 
+        ///validation before sending to server
         
         if((userEmail?.isEmpty)! || (userPassword?.isEmpty)! || (userPasswordConfirm?.isEmpty)! || (userName?.isEmpty)!)
         {
             
-            // Display alert message
+            /// Display alert message
             
             displayMyAlertMessage("All fields are required");
             
             return;
         }
         
-        //Check if passwords match
+        ///Check if passwords match
         if(userPassword != userPasswordConfirm)
         {
-            // Display an alert message
+            /// Display an alert message
             displayMyAlertMessage("Passwords do not match");
             return;
             
         }
-        //validate email - test this fully
+        ///validate email
        if (isValidEmail(testStr: userEmail!) == true)
        {
-        //if password is valid string here too, then register
-     //   if (isValidPassword(testStr: userPassword!) == true)
-       // {
+        /// call the register method
             register()
-        //}
-       // else {
-        //     displayMyAlertMessage("Password must contain an Uppercase, Lowercase and Special character")
-        //}
-         
         }
         else
        {
@@ -82,35 +78,19 @@ class RegisterPageViewController: UIViewController {
         }
 
     }
-    
+    /**
+     Handle the email validation
+     */
     func isValidEmail(testStr:String) -> Bool {
-        // print("validate calendar: \(testStr)")
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: testStr)
     }
     
-    //one of xzy and two numbers - think
-    //for lockID - ^(?=.*[0-9].*[0-9])(?=.*[xzy])$
-    
-    
-    // Start anchor - password regex
-    //Ensure string has an uppercase letter.
-    //Ensure string has one special case letter.
-
-    //Ensure string has a lowercase letter.
-    //End anchor.
-    
-    func isValidPassword(testStr:String) -> Bool {
-        print("validate calendar: \(testStr)")
-        let passwordRegEx = "^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[a-z])$"
-        
-        let passwordTest = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
-       return passwordTest.evaluate(with: testStr)
-    }
-
-    
+    /**
+     Handle the register command and POST the information to the RESTful API
+     */
     func register()
     {
         //store everything in user defaults
@@ -126,14 +106,9 @@ class RegisterPageViewController: UIViewController {
             
               UserDefaults.standard.set(false, forKey: "LockIDPresent")
               UserDefaults.standard.synchronize()
-         //   sets and sends lockID as an empty string so the field is initialised
+         ///   sets and sends lockID as an empty string so the field is initialised
             LockID.text = nil;
         }
-            //not working - fix this
-  //      else if (LockID.text?.hasPrefix("x") != true){
-            //make sure LockID starts with x
-         //   displayMyAlertMessage("Please check LockID and try again")
-   //         }
         else
         {
             print(LockID.text as Any)
@@ -144,7 +119,6 @@ class RegisterPageViewController: UIViewController {
         
         if (UserDefaults.standard.value(forKey: "userIP") == nil)
         {
-            //make this a print out and stop the program crashing by assigning user defaults a value for IP
             UserDefaults.standard.set("localhost", forKey: "userIP")
             
             print("Local host programatically set");
@@ -175,17 +149,12 @@ class RegisterPageViewController: UIViewController {
                 
                 if resString["success"].stringValue == "true"
                 {
-                    DispatchQueue.main.async() {
-                   // self.displayMyAlertMessage(resString["message"].stringValue)
-                    //close the  registration page and prompt for login if successful response from server
-                       
-                    }
+                    ///success
                    self.dismiss(animated: true, completion: nil)
                 }
                 else if resString["success"].stringValue == "false"
                 {
-                    //error handling for already signed up users
-
+                    ///error handling for already signed up users
                     print(resString["message"].stringValue);
                     DispatchQueue.main.async() {
                         self.displayMyAlertMessage(resString["message"].stringValue)
@@ -195,7 +164,7 @@ class RegisterPageViewController: UIViewController {
             
         }
         task.resume()
-        //set fields to empty
+        ///set fields to empty
         email.text = "";
         password.text="";
         password2.text="";
@@ -203,7 +172,9 @@ class RegisterPageViewController: UIViewController {
         name.text="";
     }
     
-    
+    /**
+     Display a message via an alert
+     */
     func displayMyAlertMessage(_ userMessage:String)
     {
         
@@ -217,18 +188,13 @@ class RegisterPageViewController: UIViewController {
         
     }
     
+    /**
+     Handle the have account button (back) 
+     */
     @IBAction func HaveAccount(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
 
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+ 
 
 }

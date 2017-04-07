@@ -15,21 +15,20 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
        
         super.viewDidLoad()
-      //   UserDefaults.standard.set("localhost", forKey: "userIP")
-        //hide keyboard when anywhere tapped
+        ///hide keyboard when anywhere tapped
          self.hideKeyboardWhenTappedAround()
 
 
-        // Do any additional setup after loading the view.
+        /// Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        /// Dispose of any resources that can be recreated.
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //thumb print verification when view appears
+        ///thumb print verification when view appears
         self.hideKeyboardWhenTappedAround()
         shouldAuthenticate()
           }
@@ -39,9 +38,12 @@ class LoginViewController: UIViewController {
         return false;
     }
 
+    /**
+     Method to control the TouchID verification
+     */
     func shouldAuthenticate() {
-        //work out if the TouchID should be presented
-        //Authenticate with server to establish connection
+        ///work out if the TouchID should be presented
+        ///Authenticate with server to establish connection
         
         if UserDefaults.standard.value(forKey: "email") != nil{
             if (UserDefaults.standard.value(forKey: "userIP") != nil)
@@ -54,13 +56,15 @@ class LoginViewController: UIViewController {
             }
         }
         else {
-            //do nothing to show normal log in
+            ///do nothing to show normal log in
             print("no email value stored in defaults")
         }
 
     }
     
-    
+    /**
+     Authenticate a user by checking their details and obtaining a token
+     */
     func authenticateUser() {
         var e = "";
         if UserDefaults.standard.object(forKey: "email") != nil{
@@ -88,11 +92,6 @@ class LoginViewController: UIViewController {
                         self.dismiss(animated: true, completion: nil);
                         }
                     }
-//                        else {
-//                        let ac = UIAlertController(title: "TouchID Authentication failed", message: "Enter Login Credentials", preferredStyle: .alert)
-//                        ac.addAction(UIAlertAction(title: "OK", style: .default))
-//                        self.present(ac, animated: true)
-                  //  }
                 }
             }
         } else {
@@ -103,7 +102,9 @@ class LoginViewController: UIViewController {
     
     }
     
-    
+    /**
+     Method for POSTing to the API if a TouchID if used
+     */
    func loginWithTouchID() {
         
         if (UserDefaults.standard.value(forKey: "userIP") == nil)
@@ -133,7 +134,7 @@ class LoginViewController: UIViewController {
             return
             }
             
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           /// check for http errors
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(response)")
                 UserDefaults.standard.set(true, forKey: "issue")
@@ -143,7 +144,6 @@ class LoginViewController: UIViewController {
                 }
             }
             let responseString = String(data: data, encoding: .utf8)
-            //  print("responseString = \(responseString)")      //uncomment for debugging
             
             if let data = responseString?.data(using: String.Encoding.utf8) {
                 let resString = JSON(data: data)
@@ -152,10 +152,10 @@ class LoginViewController: UIViewController {
                 {
                     UserDefaults.standard.set(true, forKey: "issue")
                      UserDefaults.standard.synchronize()
-                    //pop up a box saying incorrect user please try again
+                    ///pop up a box saying incorrect user please try again
                     print(resString["message"].stringValue);
                     UserDefaults.standard.set(resString["message"].stringValue,forKey:"loginFailed");
-                    //this doesnt work - fix it
+                    
                     DispatchQueue.main.async() {
                         //self.displayMyAlertMessage("Your credentials are incorrect. Please check your email and password.")
                         self.incorrectdetails.text = "Your credentials are incorrect. Please check your email and password."
@@ -165,28 +165,26 @@ class LoginViewController: UIViewController {
                 else if resString["success"].stringValue == "true"
                 {
                     UserDefaults.standard.set(false, forKey: "issue")
-                    //save token to user standards
+                    ///save token to user standards
                     UserDefaults.standard.set((resString["token"].stringValue), forKey: "token")
                     UserDefaults.standard.synchronize()
                     
-                    //save lockid to user standards, from the authenticate method
+                    ///save lockid to user standards, from the authenticate method
                     if resString["LockID"].stringValue == ""
                     {
-                        //make set lockID pop up
+                        ///make set lockID pop up
                         UserDefaults.standard.set(false, forKey: "LockIDPresent")
                         UserDefaults.standard.synchronize()
                     }
                     else {
-                        //stop set lockID from popping up and store the LockID for future use
+                        ///stop set lockID from popping up and store the LockID for future use
                         let id = resString["LockID"].stringValue
                         UserDefaults.standard.set(true, forKey: "LockIDPresent")
                         UserDefaults.standard.set(id, forKey: "LockID")
                         UserDefaults.standard.synchronize()
                     }
                     
-                    //test token save to user standards
-                    //   print(UserDefaults.standard.value(forKey: "token") ??  "no token stored")
-                    //move to next window here
+                    ///move to next window here
                     UserDefaults.standard.set(true,forKey:"isUserLoggedIn");
                     UserDefaults.standard.synchronize();
                     self.dismiss(animated: true, completion: nil);
@@ -199,7 +197,11 @@ class LoginViewController: UIViewController {
         task.resume()
     }
 
-    
+    /**
+     Control the login:
+     1. if the login is sucessful return true 
+     2. if the login is unsuccessful return false
+     */
     func login() -> Bool
     {
         var issue = false;
@@ -209,7 +211,6 @@ class LoginViewController: UIViewController {
         
         if (UserDefaults.standard.value(forKey: "userIP") == nil)
         {
-            //make this a message box and stop the program crashing by assigning user defaults a value
             UserDefaults.standard.set("localhost", forKey: "userIP")
 
             print("Local host programatically set");
@@ -241,7 +242,6 @@ class LoginViewController: UIViewController {
             
             
             let responseString = String(data: data, encoding: .utf8)
-           //  print("responseString = \(responseString)")      //uncomment for debugging
             
             if let data = responseString?.data(using: String.Encoding.utf8) {
                 let resString = JSON(data: data)
@@ -254,7 +254,6 @@ class LoginViewController: UIViewController {
                     //pop up a box saying incorrect user please try again
                     print(resString["message"].stringValue);
                     UserDefaults.standard.set(resString["message"].stringValue,forKey:"loginFailed");
-                    //this doesnt work - fix it
                     
                     DispatchQueue.main.async() {
                         self.displayMyAlertMessage(resString["message"].stringValue)
@@ -264,39 +263,30 @@ class LoginViewController: UIViewController {
              else if resString["success"].stringValue == "true"
                 {
                     
-                    //save token to user standards
+                    ///save token to user standards
                     UserDefaults.standard.set((resString["token"].stringValue), forKey: "token")
                     UserDefaults.standard.synchronize()
                     
-                    //save lockid to user standards, from the authenticate method 
+                    ///save lockid to user standards, from the authenticate method
                     if resString["LockID"].stringValue == ""
                     {
-                        //make set lockID pop up
+                        ///make set lockID pop up
                            UserDefaults.standard.set(false, forKey: "LockIDPresent")
                            UserDefaults.standard.synchronize()
                     }
                     else {
-                        //stop set lockID from popping up and store the LockID for future use
+                        ///stop set lockID from popping up and store the LockID for future use
                         let id = resString["LockID"].stringValue
                         UserDefaults.standard.set(true, forKey: "LockIDPresent")
                         UserDefaults.standard.set(id, forKey: "LockID")
                         UserDefaults.standard.synchronize()
                     }
                     
-                    //test token save to user standards
-                 //   print(UserDefaults.standard.value(forKey: "token") ??  "no token stored")
-                    
-                    //move to next window here
+                    ///move to next window here
                     UserDefaults.standard.set(true,forKey:"isUserLoggedIn");
                     UserDefaults.standard.synchronize();
                     self.dismiss(animated: true, completion: nil);
-                    
                 }
-                
-                //   testing
-                //   print(resString["success"].stringValue)
-                //   print(resString["token"].stringValue)
-                
             }
             
         }
@@ -309,6 +299,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     
     
+    /**
+     Control the login button by calling the correct method to handle it
+     */
     @IBAction func login(_ sender: Any) {
         
         let userPassword = password.text
@@ -316,7 +309,7 @@ class LoginViewController: UIViewController {
         
         if((userEmail?.isEmpty)! || (userPassword?.isEmpty)!)
         {
-            // Display alert message
+            /// Display alert message
             
             displayMyAlertMessage("All fields are required");
             
@@ -330,7 +323,9 @@ class LoginViewController: UIViewController {
         
     }
     
-    //alert controller
+    /**
+     Display a message using an alert 
+     */
     func displayMyAlertMessage(_ userMessage:String)
     {
         

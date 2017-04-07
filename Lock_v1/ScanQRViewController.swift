@@ -34,41 +34,41 @@ class ScanQRViewController: UIViewController , AVCaptureMetadataOutputObjectsDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Get an instance of the AVCaptureDevice class to initialize a device object and provide the video as the media type parameter.
+        /// Get an instance of the AVCaptureDevice class to initialize a device object and provide the video as the media type parameter.
         let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         
         do {
-            // Get an instance of the AVCaptureDeviceInput class using the previous device object.
+            /// Get an instance of the AVCaptureDeviceInput class using the previous device object.
             let input = try AVCaptureDeviceInput(device: captureDevice)
             
-            // Initialize the captureSession object.
+            /// Initialize the captureSession object.
             captureSession = AVCaptureSession()
             
-            // Set the input device on the capture session.
+            /// Set the input device on the capture session.
             captureSession?.addInput(input)
             
-            // Initialize a AVCaptureMetadataOutput object and set it as the output device to the capture session.
+            /// Initialize a AVCaptureMetadataOutput object and set it as the output device to the capture session.
             let captureMetadataOutput = AVCaptureMetadataOutput()
             captureSession?.addOutput(captureMetadataOutput)
             
-            // Set delegate and use the default dispatch queue to execute the call back
+            /// Set delegate and use the default dispatch queue to execute the call back
             captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
             captureMetadataOutput.metadataObjectTypes = supportedCodeTypes
             
-            // Initialize the video preview layer and add it as a sublayer to the viewPreview view's layer.
+            /// Initialize the video preview layer and add it as a sublayer to the viewPreview view's layer.
             videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
             videoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
             videoPreviewLayer?.frame = view.layer.bounds
             view.layer.addSublayer(videoPreviewLayer!)
             
-            // Start video capture.
+            /// Start video capture.
             captureSession?.startRunning()
             
-            // Move the message label and top bar to the front
+            /// Move the message label and top bar to the front
             view.bringSubview(toFront: messageLabel)
             view.bringSubview(toFront: topbar)
             
-            // Initialize QR Code Frame to highlight the QR code
+            /// Initialize QR Code Frame to highlight the QR code
             qrCodeFrameView = UIView()
             
             if let qrCodeFrameView = qrCodeFrameView {
@@ -79,7 +79,7 @@ class ScanQRViewController: UIViewController , AVCaptureMetadataOutputObjectsDel
             }
             
         } catch {
-            // If any error occurs, simply print it out and don't continue any more.
+            /// If any error occurs, simply print it out and don't continue any more.
             print(error)
             return
         }
@@ -87,26 +87,26 @@ class ScanQRViewController: UIViewController , AVCaptureMetadataOutputObjectsDel
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        /// Dispose of any resources that can be recreated.
     }
     
     
-    // MARK: - AVCaptureMetadataOutputObjectsDelegate Methods
+    /// MARK: - AVCaptureMetadataOutputObjectsDelegate Methods
     
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         
-        // Check if the metadataObjects array is not nil and it contains at least one object.
+        /// Check if the metadataObjects array is not nil and it contains at least one object.
         if metadataObjects == nil || metadataObjects.count == 0 {
             qrCodeFrameView?.frame = CGRect.zero
             messageLabel.text = "No QR/barcode is detected"
             return
         }
         
-        // Get the metadata object.
+        /// Get the metadata object.
         let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
         
         if supportedCodeTypes.contains(metadataObj.type) {
-            // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
+            /// If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
             let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
             qrCodeFrameView?.frame = barCodeObject!.bounds
             
@@ -122,6 +122,9 @@ class ScanQRViewController: UIViewController , AVCaptureMetadataOutputObjectsDel
         }
     }
    
+    /**
+     Handle the POST of the LockID data to the RESTful API
+     */
     func lockPost()
     {
         if (UserDefaults.standard.value(forKey: "userIP") == nil)
@@ -151,7 +154,6 @@ class ScanQRViewController: UIViewController , AVCaptureMetadataOutputObjectsDel
             }
             
             let responseString = String(data: data, encoding: .utf8)
-            // print("responseString = \(responseString)")
             
             if let data = responseString?.data(using: String.Encoding.utf8) {
                 let resString = JSON(data: data)

@@ -22,27 +22,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/AdminToolsViewController.swift",
-      "line": 24,
-      "symbol": "AdminToolsViewController.presentAlert()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/AdminToolsViewController.swift",
-      "line": 53,
-      "symbol": "AdminToolsViewController.InputIP(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/AdminToolsViewController.swift",
-      "line": 58,
-      "symbol": "AdminToolsViewController.back(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/AppDelegate.swift",
       "line": 12,
       "symbol": "AppDelegate",
@@ -114,86 +93,44 @@
     },
     {
       "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/LoginViewController.swift",
-      "line": 26,
+      "line": 25,
       "symbol": "LoginViewController.didReceiveMemoryWarning()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/LoginViewController.swift",
-      "line": 31,
+      "line": 30,
       "symbol": "LoginViewController.viewDidAppear(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/LoginViewController.swift",
-      "line": 37,
+      "line": 36,
       "symbol": "LoginViewController.textFieldShouldReturn(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/LoginViewController.swift",
-      "line": 42,
-      "symbol": "LoginViewController.shouldAuthenticate()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/LoginViewController.swift",
-      "line": 64,
-      "symbol": "LoginViewController.authenticateUser()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/LoginViewController.swift",
-      "line": 107,
-      "symbol": "LoginViewController.loginWithTouchID()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/LoginViewController.swift",
-      "line": 203,
-      "symbol": "LoginViewController.login()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/LoginViewController.swift",
-      "line": 307,
+      "line": 297,
       "symbol": "LoginViewController.incorrectdetails",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/LoginViewController.swift",
-      "line": 308,
+      "line": 298,
       "symbol": "LoginViewController.password",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/LoginViewController.swift",
-      "line": 309,
+      "line": 299,
       "symbol": "LoginViewController.email",
       "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/LoginViewController.swift",
-      "line": 312,
-      "symbol": "LoginViewController.login(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/LoginViewController.swift",
-      "line": 334,
-      "symbol": "LoginViewController.displayMyAlertMessage(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -240,13 +177,6 @@
     },
     {
       "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/LogsViewController.swift",
-      "line": 22,
-      "symbol": "LogsViewController.cellReuseIdentifier",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/LogsViewController.swift",
       "line": 24,
       "symbol": "LogsViewController.items",
       "symbol_kind": "source.lang.swift.decl.var.instance",
@@ -268,56 +198,35 @@
     },
     {
       "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/LogsViewController.swift",
-      "line": 88,
+      "line": 87,
       "symbol": "LogsViewController.tableView(_:numberOfRowsInSection:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/LogsViewController.swift",
-      "line": 92,
-      "symbol": "LogsViewController.tableView(_:cellForRowAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/LogsViewController.swift",
-      "line": 107,
+      "line": 106,
       "symbol": "LogsViewController.tableView(_:didSelectRowAt:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/LogsViewController.swift",
-      "line": 117,
-      "symbol": "LogsViewController.displayMyAlertMessage(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/LogsViewController.swift",
-      "line": 135,
+      "line": 136,
       "symbol": "LogsViewController.tableView",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/LogsViewController.swift",
-      "line": 137,
+      "line": 138,
       "symbol": "LogsViewController.didReceiveMemoryWarning()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/LogsViewController.swift",
-      "line": 142,
-      "symbol": "LogsViewController.back(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/LogsViewController.swift",
-      "line": 146,
+      "line": 150,
       "symbol": "LogsViewController.welcomemessage",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
@@ -376,48 +285,6 @@
       "line": 36,
       "symbol": "RegisterPageViewController.LockID",
       "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/RegisterPageViewController.swift",
-      "line": 39,
-      "symbol": "RegisterPageViewController.registerButton(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/RegisterPageViewController.swift",
-      "line": 86,
-      "symbol": "RegisterPageViewController.isValidEmail(testStr:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/RegisterPageViewController.swift",
-      "line": 105,
-      "symbol": "RegisterPageViewController.isValidPassword(testStr:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/RegisterPageViewController.swift",
-      "line": 114,
-      "symbol": "RegisterPageViewController.register()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/RegisterPageViewController.swift",
-      "line": 207,
-      "symbol": "RegisterPageViewController.displayMyAlertMessage(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/RegisterPageViewController.swift",
-      "line": 220,
-      "symbol": "RegisterPageViewController.HaveAccount(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -491,20 +358,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/ScanQRViewController.swift",
-      "line": 96,
-      "symbol": "ScanQRViewController.captureOutput(_:didOutputMetadataObjects:from:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/ScanQRViewController.swift",
-      "line": 125,
-      "symbol": "ScanQRViewController.lockPost()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/SetupViewController.swift",
       "line": 12,
       "symbol": "SetupViewController",
@@ -520,44 +373,30 @@
     },
     {
       "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/SetupViewController.swift",
-      "line": 25,
+      "line": 24,
       "symbol": "SetupViewController.viewDidAppear(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/SetupViewController.swift",
-      "line": 32,
+      "line": 31,
       "symbol": "SetupViewController.didReceiveMemoryWarning()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/SetupViewController.swift",
-      "line": 37,
+      "line": 36,
       "symbol": "SetupViewController.LockID",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/SetupViewController.swift",
-      "line": 39,
-      "symbol": "SetupViewController.setup(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/SetupViewController.swift",
-      "line": 99,
+      "line": 101,
       "symbol": "SetupViewController.hello_label",
       "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/SetupViewController.swift",
-      "line": 101,
-      "symbol": "SetupViewController.back(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -618,72 +457,30 @@
     },
     {
       "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/updatePasswordViewController.swift",
-      "line": 22,
-      "symbol": "updatePasswordViewController.passwordChanged(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/updatePasswordViewController.swift",
-      "line": 28,
+      "line": 30,
       "symbol": "updatePasswordViewController.didReceiveMemoryWarning()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/updatePasswordViewController.swift",
-      "line": 34,
-      "symbol": "updatePasswordViewController.password1",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/updatePasswordViewController.swift",
-      "line": 35,
+      "line": 37,
       "symbol": "updatePasswordViewController.email",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/updatePasswordViewController.swift",
-      "line": 37,
-      "symbol": "updatePasswordViewController.back(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/updatePasswordViewController.swift",
-      "line": 43,
+      "line": 48,
       "symbol": "updatePasswordViewController.strengthLabel",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/updatePasswordViewController.swift",
-      "line": 44,
+      "line": 49,
       "symbol": "updatePasswordViewController.password2",
       "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/updatePasswordViewController.swift",
-      "line": 46,
-      "symbol": "updatePasswordViewController.submit(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/updatePasswordViewController.swift",
-      "line": 63,
-      "symbol": "updatePasswordViewController.changePassword()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/NikhilVedi/Documents/Xcode /Lock_v1/Lock_v1/updatePasswordViewController.swift",
-      "line": 126,
-      "symbol": "updatePasswordViewController.displayMyAlertMessage(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     }
   ],

@@ -13,14 +13,17 @@ class AdminToolsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        /// Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        /// Dispose of any resources that can be recreated.
     }
     
+    /**
+     Alert the User to input an IP for development purposes
+     */
     func presentAlert() {
         let alertController = UIAlertController(title: "IP?", message: "Please input your unique key:", preferredStyle: .alert)
         
@@ -49,12 +52,16 @@ class AdminToolsViewController: UIViewController {
     }
 
     
-
+    /**
+     handle the button click
+     */
     @IBAction func InputIP(_ sender: Any) {
         presentAlert()
     }
     
-    
+    /**
+     Handle the back button 
+     */
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

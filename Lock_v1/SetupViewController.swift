@@ -13,11 +13,10 @@ class SetupViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //hide keyboard when anywhere tapped
+        ///hide keyboard when anywhere tapped
          self.hideKeyboardWhenTappedAround()
        
         let n =  UserDefaults.standard.value(forKey: "email")!
-        //improve this 
         hello_label.text = "Hello \(n) you have no locks set up"
         // Do any additional setup after loading the view.
     }
@@ -36,6 +35,9 @@ class SetupViewController: UIViewController {
     
   @IBOutlet weak var LockID: UITextField!
     
+    /**
+     Setup the LockID of the user
+     */
     @IBAction func setup(_ sender: Any) {
         
         if (UserDefaults.standard.value(forKey: "userIP") == nil)
@@ -98,16 +100,10 @@ class SetupViewController: UIViewController {
            }
     @IBOutlet weak var hello_label: UILabel!
 
+    /**
+     Handle the back button
+     */
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-}
+   }
