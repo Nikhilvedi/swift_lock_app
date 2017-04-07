@@ -6,7 +6,6 @@
 //  Copyright © 2016 Nikhil Vedi. All rights reserved.
 //
 
-//to post to an /unLock it must be put in the URL
 
 import UIKit
 import SwiftyJSON
@@ -32,12 +31,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //add if nil bit for this as it breaks on fresh install 
-        // set welcome text for label 
+        //add if nil bit for this as it breaks on fresh install
+        /// set welcome text for label
             UserDefaults.standard.synchronize();
         
           if UserDefaults.standard.object(forKey: "email") != nil{
-         //   let e = UserDefaults.standard.value(forKey: "email")!
             welcome.text = "Welcome to Cloud Locks"
         }
           else {
@@ -46,13 +44,16 @@ class ViewController: UIViewController {
        
     }
     
-    //check token after 3 minutes - should have expired, kick user out 
-    
+    /**
+     Check token after 3 minutes - should have expired, kick user out
+     */
     func tokenCheck()
     {
+         /// viewController is visible
         if ((self.isViewLoaded) && (self.view.window != nil)) {
-            // viewController is visible
-    DispatchQueue.main.asyncAfter(deadline: .now() + 120) {      //check after 180 seconds
+            ///check after 180 seconds
+    DispatchQueue.main.asyncAfter(deadline: .now() + 120) {
+
         var e = "noemail"
         var t = "notoken"
         
@@ -66,20 +67,20 @@ class ViewController: UIViewController {
          t = UserDefaults.standard.value(forKey: "token")! as! String
         }
         
-        print(t)        //this prints the stored token
+        print(t)        ///this prints the stored token
         
         let urlPath = "http://\(u):3000/users/tokencheck"
         let url = NSURL(string: urlPath)
         let session = URLSession.shared
         let request = NSMutableURLRequest(url: url! as URL)
-        request.httpMethod = "GET" // make it post if you want
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")//This is just an example, put the Content-Type that suites you
+        request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue(e , forHTTPHeaderField: "name")
         request.addValue(t , forHTTPHeaderField: "x-access-token")
         let task = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             print("error=\(error)")
             
-        if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {                // check for http errors
+        if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {                /// check for http errors
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(response)")
             }
@@ -130,7 +131,9 @@ class ViewController: UIViewController {
       
       }
    
-    
+    /**
+     * Handle the POST for the unlock to the RESTful API
+     */
     func un_lock()
     {
           UIApplication.shared.isNetworkActivityIndicatorVisible = true;
@@ -170,8 +173,7 @@ class ViewController: UIViewController {
                 if resString["success"].stringValue == "true"
                 {
                    //handle success
-                    //animate a lock shutting maybe?
-                    //print for now
+                    //print and message box
                     print(resString["message"].stringValue)
                     DispatchQueue.main.async() {
                         self.displayMyAlertMessage(resString["message"].stringValue)
@@ -180,8 +182,6 @@ class ViewController: UIViewController {
                 else if resString["success"].stringValue == "false"
                 {
                     //error handling for failed unlock
-                   // print(resString["message"].stringValue)
-                    
                     //hop back onto main stack to pop up message box
                     DispatchQueue.main.async() {
                         self.displayMyAlertMessage(resString["message"].stringValue)
@@ -192,12 +192,12 @@ class ViewController: UIViewController {
                  task.resume()
     UIApplication.shared.isNetworkActivityIndicatorVisible = false;
         
-        //make this work for the activity spinner in top bar
-        //UIApplication.shared.isNetworkActivityIndicatorVisible = true;
-        
         }
     
     
+    /**
+     * Handle the POST for the lock to the RESTful API
+     */
     func lock()
     {
           UIApplication.shared.isNetworkActivityIndicatorVisible = true;
@@ -209,9 +209,6 @@ class ViewController: UIViewController {
         let postString = "name=\(n)&LockID=\(l)"
         var request = URLRequest(url: URL(string: url_to_lock)!)
         
-        //testing
-        //  print(postString)
-        //  print(url_to_unlock)
         request.httpMethod = "POST"
         request.httpBody = postString.data(using: .utf8)
         
@@ -235,8 +232,7 @@ class ViewController: UIViewController {
                 if resString["success"].stringValue == "true"
                 {
                     //handle success
-                    //animate a lock shutting maybe?
-                    //print for now
+                    //print and message box
                     print(resString["message"].stringValue)
                     DispatchQueue.main.async() {
                         self.displayMyAlertMessage(resString["message"].stringValue)
@@ -245,8 +241,6 @@ class ViewController: UIViewController {
                 else if resString["success"].stringValue == "false"
                 {
                     //error handling for failed unlock
-                    // print(resString["message"].stringValue)
-                    
                     //hop back onto main stack to pop up message box
                     DispatchQueue.main.async() {
                         self.displayMyAlertMessage(resString["message"].stringValue)
@@ -260,6 +254,9 @@ class ViewController: UIViewController {
         
     }
     
+    /**
+     * Log out method and destroy token
+     */
     func logout(){
         
         //set user to logged out
@@ -274,10 +271,16 @@ class ViewController: UIViewController {
 
     }
     
+    /**
+     * Button event for logout
+     */
     @IBAction func logoutbutton(_ sender: Any) {
         logout()
     }
     
+    /**
+     * Displaying an alert message
+     */
     func displayMyAlertMessage(_ userMessage:String)
     {
         
@@ -291,6 +294,9 @@ class ViewController: UIViewController {
         
     }
    
+    /**
+     * Displaying an alert message for being kicked out of the system due to tiken expiry
+     */
     func displayMyAlertMessageLoginView(_ userMessage:String)
     {
         
@@ -312,13 +318,17 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var welcome: UILabel!
     
-    //button actions
 
-
+    /**
+     * Lock button action
+     */
     @IBAction func lock(_ sender: UIButton) {
         lock()
     }
     
+    /**
+     * Unlock button action
+     */
     @IBAction func unLock(_ sender: Any) {
         un_lock()
 
