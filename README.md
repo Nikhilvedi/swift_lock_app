@@ -11,7 +11,7 @@ are part of my Final Year Project, BSc Computer Science at Sheffield Hallam Univ
 
 ## Code Quality and Comments
 
-* Docmentation has been created using jazzy which is included in the repository and can be downloaded and viewed by navigating to the 'docs' folder and browsing the HTML files. 
+* Docmentation has been created using jazzy which is included in the repository and can be viewed by navigating to the 'docs' folder or nikhilvedi.github.io/swift_lock_app and browsing the HTTP files. 
 * See comments within code and documentation for more information on implementation and justification.
 
 ## How To Use
