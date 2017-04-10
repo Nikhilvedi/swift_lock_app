@@ -23,6 +23,12 @@ are part of my Final Year Project, BSc Computer Science at Sheffield Hallam Univ
 * Open the project workspace
 * Compile the project onto your iPhone or a Simulator (Must have a single use developer licence for your own phone)
 
+## Testing 
+
+* Run the Xcode UI testing file 'Lock_v1UITests' for UI tests 
+* Run the Xcode Unit testing files 
+
+
 
 ## License
 
