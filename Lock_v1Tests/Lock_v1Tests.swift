@@ -33,4 +33,17 @@ class Lock_v1Tests: XCTestCase {
         }
     }
     
+    func testLockIDPresent() {
+        //test if a lockID is present in userdefaults 
+        
+        XCTAssertTrue(UserDefaults.standard.bool(forKey: "LockIDPresent"), "true")
+    }
+    
+    func testIPPresent() {
+        //test if the IP is present in the application 
+        
+        XCTAssertTrue(((UserDefaults.standard.value(forKey: "userIP") != nil)), "localhost")
+
+    }
+    
 }
