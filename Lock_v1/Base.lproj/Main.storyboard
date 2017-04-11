@@ -200,7 +200,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQ9-mv-aUb">
-                                <rect key="frame" x="0.0" y="155" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="222" width="320" height="70"/>
                                 <color key="backgroundColor" red="1" green="0.078622190559999999" blue="0.089657637080000005" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="XPm-0b-JWc"/>
@@ -214,7 +214,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCq-U3-c0J">
-                                <rect key="frame" x="0.0" y="225" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="292" width="320" height="70"/>
                                 <color key="backgroundColor" red="0.1344255083" green="0.420441854" blue="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="fNq-w9-ubE"/>
@@ -228,7 +228,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3C-6O-lYX">
-                                <rect key="frame" x="0.0" y="295" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="362" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.84436824460000004" green="0.91689604920000001" blue="0.86903465359999998" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -240,12 +240,32 @@
                                     <segue destination="8u1-Hh-X99" kind="presentation" id="2AX-96-nCm"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="       Door Status: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XC0-WN-VKe">
+                                <rect key="frame" x="0.0" y="102" width="320" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClJ-9O-f9n">
+                                <rect key="frame" x="0.0" y="152" width="320" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="LOCKED">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name=".SFNSText"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="VW6-Ly-tEl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ATh-RG-brY"/>
                             <constraint firstItem="VW6-Ly-tEl" firstAttribute="trailing" secondItem="fQ9-mv-aUb" secondAttribute="trailing" id="CEh-fT-J3B"/>
-                            <constraint firstItem="fQ9-mv-aUb" firstAttribute="top" secondItem="VW6-Ly-tEl" secondAttribute="bottom" constant="87" id="Mik-T6-TaV"/>
+                            <constraint firstItem="fQ9-mv-aUb" firstAttribute="top" secondItem="VW6-Ly-tEl" secondAttribute="bottom" constant="154" id="Mik-T6-TaV"/>
                             <constraint firstItem="VW6-Ly-tEl" firstAttribute="leading" secondItem="fQ9-mv-aUb" secondAttribute="leading" id="WZ1-Zu-W3S"/>
                             <constraint firstItem="HCq-U3-c0J" firstAttribute="top" secondItem="fQ9-mv-aUb" secondAttribute="bottom" id="a7L-Qb-FD9"/>
                             <constraint firstItem="VW6-Ly-tEl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jNy-5x-I5n"/>
@@ -256,6 +276,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="aql-Sr-njl"/>
                     <connections>
+                        <outlet property="lockStatusText" destination="ClJ-9O-f9n" id="qOj-tK-d58"/>
                         <outlet property="welcome" destination="VW6-Ly-tEl" id="LOa-8J-uto"/>
                         <segue destination="VRs-JW-cpU" kind="presentation" identifier="LoginView" id="zm8-Y6-g0J"/>
                         <segue destination="eOm-EK-hGZ" kind="presentation" identifier="Setup" id="AHj-Vz-g4v"/>

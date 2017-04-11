@@ -98,6 +98,8 @@ class ViewController: UIViewController {
                 else if resString["success"].stringValue == "false"
                 {
                     print(resString["message"].stringValue)
+                    UserDefaults.standard.set(false,forKey:"isUserLoggedIn");
+                    UserDefaults.standard.synchronize();
                       self.displayMyAlertMessageLoginView("You have been logged off due to security settings")
                 
                 }
@@ -114,12 +116,11 @@ class ViewController: UIViewController {
         
         let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn");
         let doesUserHaveLock = UserDefaults.standard.bool(forKey: "LockIDPresent");
-        
+        print(isUserLoggedIn)
        
          if(!isUserLoggedIn) {
             self.performSegue(withIdentifier: "LoginView", sender: self)
-            //testing
-           // print(doesUserHaveLock)
+
         }
         
          else  if (isUserLoggedIn) && (!doesUserHaveLock)
@@ -177,6 +178,9 @@ class ViewController: UIViewController {
                     print(resString["message"].stringValue)
                     DispatchQueue.main.async() {
                         self.displayMyAlertMessage(resString["message"].stringValue)
+                         self.lockStatusText.font = UIFont.boldSystemFont(ofSize: 17.0)
+                        
+                        self.lockStatusText.text = "UNLOCKED"
                     }
                 }
                 else if resString["success"].stringValue == "false"
@@ -236,6 +240,8 @@ class ViewController: UIViewController {
                     print(resString["message"].stringValue)
                     DispatchQueue.main.async() {
                         self.displayMyAlertMessage(resString["message"].stringValue)
+                          self.lockStatusText.font = UIFont.boldSystemFont(ofSize: 17.0)
+                            self.lockStatusText.text = "LOCKED"
                     }
                 }
                 else if resString["success"].stringValue == "false"
@@ -326,6 +332,7 @@ class ViewController: UIViewController {
         lock()
     }
     
+    @IBOutlet weak var lockStatusText: UILabel!
     /**
      * Unlock button action
      */
@@ -333,6 +340,7 @@ class ViewController: UIViewController {
         un_lock()
 
     }
+    
     
     
       }
