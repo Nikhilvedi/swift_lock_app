@@ -33,7 +33,7 @@ class AdminToolsViewController: UIViewController {
                 UserDefaults.standard.set(field.text, forKey: "userIP")
                 UserDefaults.standard.synchronize()
             } else {
-                // user did not fill field - doesnt currently work
+                // user did not fill field
                 print("no input given")
             }
         }

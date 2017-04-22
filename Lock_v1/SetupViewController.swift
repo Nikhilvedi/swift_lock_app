@@ -42,7 +42,6 @@ class SetupViewController: UIViewController {
         
         if (UserDefaults.standard.value(forKey: "userIP") == nil)
         {
-            //make this a message box and stop the program crashing by assigning user defaults a value
             UserDefaults.standard.set("localhost", forKey: "userIP")
             
             print("Local host programatically set");
@@ -69,7 +68,6 @@ class SetupViewController: UIViewController {
             }
             
             let responseString = String(data: data, encoding: .utf8)
-            // print("responseString = \(responseString)")
             
             if let data = responseString?.data(using: String.Encoding.utf8) {
                 let resString = JSON(data: data)

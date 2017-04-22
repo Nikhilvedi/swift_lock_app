@@ -109,9 +109,6 @@ class LogsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
-    
-    
-    
     /**
      Display a message via an alert box
      */

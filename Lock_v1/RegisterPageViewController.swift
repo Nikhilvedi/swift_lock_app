@@ -46,19 +46,14 @@ class RegisterPageViewController: UIViewController {
         let userPassword = password.text
         let userPasswordConfirm = password2.text
         
-        ///validation before sending to server
-        
+        ///validation before sending to API
         if((userEmail?.isEmpty)! || (userPassword?.isEmpty)! || (userPasswordConfirm?.isEmpty)! || (userName?.isEmpty)!)
         {
-            
             /// Display alert message
-            
             displayMyAlertMessage("All fields are required");
-            
             return;
         }
-        
-        ///Check if passwords match
+            ///Check if passwords match
         if(userPassword != userPasswordConfirm)
         {
             /// Display an alert message
@@ -66,17 +61,16 @@ class RegisterPageViewController: UIViewController {
             return;
             
         }
-        ///validate email
+            ///validate email
        if (isValidEmail(testStr: userEmail!) == true)
        {
-        /// call the register method
+            /// call the register method
             register()
         }
         else
        {
         displayMyAlertMessage("Please enter a valid email address")
         }
-
     }
     /**
      Handle the email validation
@@ -150,8 +144,10 @@ class RegisterPageViewController: UIViewController {
                 if resString["success"].stringValue == "true"
                 {
                     ///success
-                   self.dismiss(animated: true, completion: nil)
-                }
+                    DispatchQueue.main.async() {
+                        self.dismiss(animated: true, completion: nil)
+                                          }
+                                  }
                 else if resString["success"].stringValue == "false"
                 {
                     ///error handling for already signed up users

@@ -31,7 +31,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //add if nil bit for this as it breaks on fresh install
         /// set welcome text for label
             UserDefaults.standard.synchronize();
         
@@ -45,7 +44,7 @@ class ViewController: UIViewController {
     }
     
     /**
-     Check token after 3 minutes - should have expired, kick user out
+     Check token after 2 minutes - should have expired, kick user out
      */
     func tokenCheck()
     {
@@ -148,9 +147,6 @@ class ViewController: UIViewController {
         let postString = "name=\(n)&LockID=\(l)"
             var request = URLRequest(url: URL(string: url_to_unlock)!)
 
-        //testing
-      //  print(postString)
-      //  print(url_to_unlock)
         request.httpMethod = "POST"
         request.httpBody = postString.data(using: .utf8)
         
@@ -186,7 +182,7 @@ class ViewController: UIViewController {
                 else if resString["success"].stringValue == "false"
                 {
                     //error handling for failed unlock
-                    //hop back onto main stack to pop up message box
+                    //hop back onto main queue to pop up message box
                     DispatchQueue.main.async() {
                         self.displayMyAlertMessage(resString["message"].stringValue)
                     }
@@ -247,7 +243,7 @@ class ViewController: UIViewController {
                 else if resString["success"].stringValue == "false"
                 {
                     //error handling for failed unlock
-                    //hop back onto main stack to pop up message box
+                    //hop back onto main queue to pop up message box
                     DispatchQueue.main.async() {
                         self.displayMyAlertMessage(resString["message"].stringValue)
                     }
@@ -301,7 +297,7 @@ class ViewController: UIViewController {
     }
    
     /**
-     * Displaying an alert message for being kicked out of the system due to tiken expiry
+     * Displaying an alert message for being kicked out of the system due to token expiry
      */
     func displayMyAlertMessageLoginView(_ userMessage:String)
     {
@@ -340,8 +336,6 @@ class ViewController: UIViewController {
         un_lock()
 
     }
-    
-    
     
       }
 
